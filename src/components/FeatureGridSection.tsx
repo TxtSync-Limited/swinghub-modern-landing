@@ -1,22 +1,27 @@
 import { Card } from "@/components/ui/card";
-import { Video, MessageSquare, MapPin, ArrowRight } from "lucide-react";
+import { Video, MessageSquare, MapPin, ArrowRight, Users } from "lucide-react";
 import whosNearMe from "@/assets/whos-near-me.png";
 
 const features = [
   {
+    icon: MapPin,
+    title: "Connect with people near you (or far away!)",
+    description: "Discover like-minded individuals in your area or explore connections worldwide.",
+  },
+  {
     icon: Video,
-    title: "Live Video Chat",
-    description: "Connect face-to-face with verified members through secure video calls.",
+    title: "Join events, clubs, and lifestyle pages",
+    description: "Access exclusive gatherings and become part of thriving communities.",
   },
   {
     icon: MessageSquare,
-    title: "Private Messaging",
-    description: "Safe and discreet messaging with advanced privacy controls.",
+    title: "Private, secure messaging with voice notes and GIFs",
+    description: "Express yourself with multimedia messaging in a completely secure environment.",
   },
   {
-    icon: MapPin,
-    title: "Events Nearby",
-    description: "Discover exclusive lifestyle events and parties in your area.",
+    icon: Users,
+    title: "Discover who's looked at your profile and who's nearby",
+    description: "See who's interested in you and find people in your vicinity.",
   },
 ];
 
@@ -26,10 +31,10 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-            Powerful features designed for you
+            Core Features That Put You First
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to connect, explore, and thrive in the lifestyle community
+            Engineered to encourage meaningful interaction — not distractions.
           </p>
         </div>
 

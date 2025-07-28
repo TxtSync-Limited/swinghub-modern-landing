@@ -8,22 +8,22 @@ import discoverImage from "@/assets/discover.png";
 const educationItems = [
   {
     icon: Mic,
-    title: "SwingHub Podcast",
-    description: "Weekly episodes featuring lifestyle experts, relationship advice, and community stories",
+    title: "The SwingHub Podcast",
+    description: "Hosts Gage & Olivia share stories, laughs, and lifestyle insights with honesty and heart.",
     image: podcastImage,
     color: "bg-purple-500"
   },
   {
     icon: GraduationCap,
-    title: "SwingHub University", 
-    description: "Comprehensive courses on communication, consent, and navigating the lifestyle safely",
+    title: "SwingHub University (Coming Soon)", 
+    description: "Bite-sized videos on app features, profile building, etiquette, and staying safe.",
     image: universityImage,
     color: "bg-blue-500"
   },
   {
     icon: Compass,
     title: "SwingHub Discover",
-    description: "Explore articles, guides, and resources to enhance your lifestyle journey",
+    description: "Handpicked articles, club news, and expert content to keep you informed and empowered.",
     image: discoverImage,
     color: "bg-emerald-500"
   }
@@ -35,10 +35,10 @@ const EducationHub = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-            Education Hub
+            Education Hub: Learn. Laugh. Connect.
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Learn, grow, and explore with confidence through our comprehensive educational resources
+            Explore SwingHub's knowledge zone packed with resources to elevate your lifestyle experience.
           </p>
         </div>
 

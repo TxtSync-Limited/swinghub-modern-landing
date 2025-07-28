@@ -14,10 +14,10 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                The <span className="text-primary">#1 App</span> for Swingers & Modern Singles
+                SwingHub – The <span className="text-primary">#1 App</span> for Swingers & Modern Singles
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Connect with like-minded people, explore the lifestyle, and discover events in your area. Join the premier community for modern relationships.
+                A revolutionary platform for empowered, open-minded connections — where safety meets excitement.
               </p>
             </div>
 
@@ -28,8 +28,8 @@ const HeroSection = () => {
                   <Download className="w-5 h-5 text-primary" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs opacity-90">Download on the</div>
-                  <div className="text-lg font-semibold">App Store</div>
+                  <div className="text-xs opacity-90">Download</div>
+                  <div className="text-lg font-semibold">Now</div>
                 </div>
               </Button>
               <Button variant="outline" className="flex items-center gap-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-6 py-3 rounded-lg shadow-card transition-smooth h-14">
@@ -37,8 +37,8 @@ const HeroSection = () => {
                   <Download className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs opacity-90">Get it on</div>
-                  <div className="text-lg font-semibold">Google Play</div>
+                  <div className="text-xs opacity-90">Discover the</div>
+                  <div className="text-lg font-semibold">Features</div>
                 </div>
               </Button>
             </div>
@@ -47,11 +47,11 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Badge variant="secondary" className="bg-accent text-foreground px-4 py-2 rounded-full font-medium shadow-soft">
                 <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
-                4.8 Trustpilot Rating
+                The UK's Favourite Lifestyle App
               </Badge>
               <Badge variant="secondary" className="bg-accent text-foreground px-4 py-2 rounded-full font-medium shadow-soft">
                 <Users className="w-4 h-4 mr-2" />
-                500K+ Downloads
+                Thousands of Active Users — And Growing Fast
               </Badge>
             </div>
           </div>

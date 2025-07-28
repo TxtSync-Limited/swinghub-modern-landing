@@ -39,10 +39,13 @@ const EventsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-            Events... Where the Lifestyle Comes to Life
+            Events That Bring the Lifestyle to Life
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover exclusive parties, social gatherings, and lifestyle events happening near you
+            From mansion parties to hotel takeovers — SwingHub Events are where real-world connections happen. Meet, mingle, and explore the lifestyle in unforgettable settings.
+          </p>
+          <p className="text-lg text-muted-foreground font-semibold">
+            Couples, singles, newbies — everyone's welcome.
           </p>
         </div>
 

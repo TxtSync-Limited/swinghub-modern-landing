@@ -9,13 +9,16 @@ const AboutSection = () => {
           {/* Left Content - Text */}
           <div className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-              Your Gateway to the Lifestyle
+              What Makes SwingHub Different?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              SwingHub is more than just an app – it's a carefully curated community where modern singles and couples can explore, connect, and thrive. Our platform combines cutting-edge technology with genuine human connection to create meaningful experiences.
+              SwingHub is a fresh take on social networking for the swinging lifestyle — built exclusively for real people looking for real experiences.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed font-semibold">
+              No swiping. No bots. Just authentic connection.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Whether you're new to the lifestyle or a seasoned explorer, SwingHub provides a safe, welcoming space to discover like-minded people, attend exclusive events, and build lasting connections that enhance your journey.
+              Whether you're just starting out or fully immersed in the lifestyle, SwingHub gives you a private, safe, and thrilling space to meet, chat, and connect with like-minded adults.
             </p>
           </div>
 

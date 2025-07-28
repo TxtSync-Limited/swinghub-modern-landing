@@ -4,18 +4,18 @@ import { Shield, UserCheck, Lock } from "lucide-react";
 const safetyFeatures = [
   {
     icon: UserCheck,
-    title: "Strict ID Checks",
-    description: "All members undergo thorough identity verification before joining our community"
+    title: "Offenders.org.uk",
+    description: "We cross-reference every user's verification photo with data from Offenders.org.uk — a trusted UK resource that helps flag individuals with a history of sexual offences."
   },
   {
     icon: Shield,
-    title: "Protected",
-    description: "Advanced security measures and 24/7 monitoring keep our community safe"
+    title: "Blackout",
+    description: "Keep your private content truly private. Blackout is SwingHub's anti-screenshot technology that helps protect your photos from being captured or shared without permission."
   },
   {
     icon: Lock,
-    title: "Private & Secure", 
-    description: "End-to-end encryption ensures your conversations and data remain completely private"
+    title: "Reports Team", 
+    description: "Our dedicated Reports Team is here to handle it fast and fairly. Just tap Report, and leave the rest up to us — we'll investigate, take action, and keep your experience safe, respectful, and drama free."
   }
 ];
 
@@ -25,10 +25,10 @@ const SafetySection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-            Your Safety. Our Priority. Always.
+            Safety First — Always
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We've built comprehensive safety measures so you can explore and connect with complete confidence
+            We take your safety seriously. SwingHub is designed to be a secure space for open-minded adults — because peace of mind is sexy.
           </p>
         </div>
 

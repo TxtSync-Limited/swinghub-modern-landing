@@ -4,87 +4,70 @@ import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 import { useState } from "react";
 
-const pricingPlans = {
-  monthly: {
-    basic: { price: "$10", period: "/mth" },
-    pro: { price: "$25", period: "/mth" },
-    enterprise: { price: "$50", period: "/mth" }
-  },
-  annual: {
-    basic: { price: "$8", period: "/mth" },
-    pro: { price: "$20", period: "/mth" },
-    enterprise: { price: "$40", period: "/mth" }
-  }
-};
-
 const plans = [
   {
-    name: "Basic",
-    key: "basic",
-    description: "Perfect for small businesses getting started",
+    name: "Free Plan",
+    price: "£0",
+    period: "/month",
+    description: "Perfect for curious swingers & open-minded singles.",
     features: [
-      "Up to 100 transactions per month",
-      "Basic expense tracking",
-      "Email support",
-      "Mobile app access"
+      "Timeline, Discover & Your View",
+      "Message other users",
+      "Browse and RSVP to events",
+      "Join pages & lifestyle groups",
+      "Basic search tools"
     ],
-    isPopular: false
+    isPopular: false,
+    buttonText: "Select This Plan"
   },
   {
-    name: "Pro",
-    key: "pro", 
-    description: "Everything you need to manage your finances",
+    name: "Premium Plan",
+    price: "£9.99",
+    period: "/month",
+    description: "For those ready to fully unlock the SwingHub lifestyle.",
     features: [
-      "Unlimited transactions",
-      "Advanced analytics & reports",
-      "Priority support",
-      "API access",
-      "Custom categories",
-      "Team collaboration"
+      "Everything in the Free Plan",
+      "Near Me – See who's close by",
+      "Looked at Me – Know who's checking you out",
+      "Meet Now – Find instant meetups",
+      "Teleport – Explore any city",
+      "Deep Search – Filter exactly what you're into",
+      "Content Blur Removal – Unlock spicy pics",
+      "Nearby Radius Extender – Go beyond your town",
+      "GIFs & Voicenotes – Add real personality to chats",
+      "One-Time View Content – Keep things private",
+      "Early Bird Event Tickets – Be first in the door",
+      "Priority Support – We've got your back, fast"
     ],
-    isPopular: true
-  },
-  {
-    name: "Enterprise",
-    key: "enterprise",
-    description: "Advanced features for larger organizations",
-    features: [
-      "Everything in Pro",
-      "Dedicated account manager",
-      "Custom integrations",
-      "Advanced security features",
-      "SLA guarantee",
-      "White-label options"
-    ],
-    isPopular: false
+    isPopular: true,
+    buttonText: "Select This Plan"
   }
 ];
 
 const PricingSection = () => {
   const [isAnnual, setIsAnnual] = useState(false);
-  const currentPricing = isAnnual ? pricingPlans.annual : pricingPlans.monthly;
 
   return (
-    <section id="pricing" className="py-24 px-6 bg-background-subtle">
-      <div className="max-w-screen-xl mx-auto">
+    <section className="w-full py-16 lg:py-24 px-6 lg:px-8 bg-gradient-primary">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl font-bold text-text-primary">
-            Pricing Plans
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
+            Free to Explore. Support to Elevate.
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Choose the plan that's right for you.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            At SwingHub, we believe everyone should have access to the swinging lifestyle — without paywalls in the way. That's why our core features are totally free, so you can connect, explore, and experience the community with zero pressure.
           </p>
 
           {/* Billing Toggle */}
           <div className="flex items-center justify-center space-x-4 mt-8">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-text-primary' : 'text-text-tertiary'}`}>
+            <span className={`text-sm font-medium ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
               Monthly
             </span>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                isAnnual ? 'bg-primary' : 'bg-gray-300'
+                isAnnual ? 'bg-primary' : 'bg-muted'
               }`}
             >
               <span
@@ -94,30 +77,25 @@ const PricingSection = () => {
               />
             </button>
             <div className="flex items-center space-x-2">
-              <span className={`text-sm font-medium ${isAnnual ? 'text-text-primary' : 'text-text-tertiary'}`}>
-                Annually
+              <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
+                Yearly
               </span>
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                Save 20%
-              </Badge>
             </div>
           </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`relative p-8 rounded-2xl border-2 transition-all hover:shadow-lg ${
-                plan.isPopular 
-                  ? 'border-primary shadow-lg' 
-                  : 'border-border bg-white'
+              className={`relative p-8 bg-gradient-card shadow-card border border-white/50 rounded-2xl transition-all hover-lift ${
+                plan.isPopular ? 'ring-2 ring-primary' : ''
               }`}
             >
               {plan.isPopular && (
                 <Badge 
-                  className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1"
+                  className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1"
                 >
                   Most Popular
                 </Badge>
@@ -126,10 +104,10 @@ const PricingSection = () => {
               <div className="space-y-6">
                 {/* Plan Header */}
                 <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-text-primary">
+                  <h3 className="text-2xl font-bold text-foreground">
                     {plan.name}
                   </h3>
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-muted-foreground">
                     {plan.description}
                   </p>
                 </div>
@@ -137,17 +115,17 @@ const PricingSection = () => {
                 {/* Price */}
                 <div className="space-y-1">
                   <div className="flex items-baseline space-x-1">
-                    <span className="text-4xl font-bold text-text-primary">
-                      {currentPricing[plan.key as keyof typeof currentPricing].price}
+                    <span className="text-4xl font-bold text-foreground">
+                      {plan.price}
                     </span>
-                    <span className="text-text-tertiary">
-                      {currentPricing[plan.key as keyof typeof currentPricing].period}
+                    <span className="text-muted-foreground">
+                      {plan.period}
                     </span>
                   </div>
-                  {isAnnual && (
-                    <p className="text-sm text-text-tertiary">
-                      Billed annually
-                    </p>
+                  {plan.name === "Free Plan" && (
+                    <div className="text-2xl font-bold text-primary">
+                      FREE
+                    </div>
                   )}
                 </div>
 
@@ -156,7 +134,7 @@ const PricingSection = () => {
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start space-x-3">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-text-secondary text-sm">
+                      <span className="text-muted-foreground">
                         {feature}
                       </span>
                     </div>
@@ -166,10 +144,12 @@ const PricingSection = () => {
                 {/* CTA Button */}
                 <Button 
                   className={`w-full ${
-                    plan.isPopular ? 'btn-primary' : 'btn-secondary'
+                    plan.isPopular 
+                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
+                      : 'bg-accent hover:bg-accent/90 text-foreground border border-primary'
                   }`}
                 >
-                  Get Started
+                  {plan.buttonText}
                 </Button>
               </div>
             </Card>

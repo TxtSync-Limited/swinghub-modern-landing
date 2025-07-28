@@ -1,102 +1,80 @@
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Calendar, Lightbulb, Rocket, TrendingUp } from "lucide-react";
 
-const steps = [
+const timelineSteps = [
   {
-    number: "01",
-    title: "Sign Up",
-    description: "Create your account in just a few minutes and get started with our platform."
+    icon: Lightbulb,
+    date: "April 2022",
+    title: "We've had enough!",
+    description: "When using other swinging websites, it became the norm to have your account shut down if a moderator didn't like you. Not only that, the fake accounts, picture collectors became too much for majority of users but they had no other alternative to connect with other swingers."
   },
   {
-    number: "02", 
-    title: "Connect Your Accounts",
-    description: "Securely link your bank accounts and credit cards to start tracking automatically."
+    icon: Calendar,
+    date: "August 2022", 
+    title: "I've got an idea",
+    description: "The idea of SwingHub came around, putting pen to paper to look at the frustrations many swingers had and working out how do we turn this idea into a reality."
   },
   {
-    number: "03",
-    title: "Start Managing",
-    description: "Use our intuitive dashboard to track expenses, set budgets, and grow your business."
+    icon: Rocket,
+    date: "September 2023",
+    title: "SwingHub Launch",
+    description: "The community came together and leaders of their industries came onboard to create the SwingHub team and launch the MVP on the 22nd September 2023."
+  },
+  {
+    icon: TrendingUp,
+    date: "Today",
+    title: "Today",
+    description: "Considered still a start up and on it's final version for global release, SwingHub has taken the UK by storm to become to largest social media app for swingers and modern singles."
   }
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-screen-xl mx-auto">
-        {/* Section Header */}
+    <section className="w-full py-16 lg:py-24 px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl font-bold text-text-primary">
-            How Our Platform Works
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
+            Our Origin Story
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Our platform is designed to be simple and intuitive. Here's how it works:
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            From frustration to innovation — how SwingHub became the UK's favourite lifestyle app
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {steps.map((step, index) => (
-            <div key={index} className="text-center space-y-4">
-              <div className="text-6xl font-bold text-gray-200 mb-4">
-                {step.number}
-              </div>
-              <h3 className="text-xl font-semibold text-text-primary">
-                {step.title}
-              </h3>
-              <p className="text-text-secondary leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Central Workflow Diagram */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-background-subtle rounded-2xl p-8 max-w-2xl w-full">
-            <div className="grid grid-cols-3 gap-4 items-center">
-              {/* Step 1 */}
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                  <div className="w-8 h-8 bg-primary rounded-lg"></div>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-primary-glow hidden md:block"></div>
+          
+          <div className="space-y-12">
+            {timelineSteps.map((step, index) => (
+              <Card key={index} className="relative bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl p-6 md:p-8 md:ml-20">
+                {/* Timeline dot */}
+                <div className="absolute -left-12 top-8 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-card hidden md:block"></div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center md:hidden">
+                      <step.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="hidden md:block w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <step.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                        {step.date}
+                      </span>
+                      <h3 className="text-xl font-bold text-foreground">
+                        {step.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-                <div className="text-sm font-medium text-text-primary">Account Setup</div>
-              </div>
-
-              {/* Arrow */}
-              <div className="flex justify-center">
-                <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-
-              {/* Step 2 */}
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-50 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                  <div className="w-8 h-8 bg-blue-500 rounded-lg"></div>
-                </div>
-                <div className="text-sm font-medium text-text-primary">Data Sync</div>
-              </div>
-            </div>
-
-            <div className="flex justify-center mt-6">
-              <svg className="w-8 h-8 text-gray-400 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-
-            <div className="text-center mt-6">
-              <div className="w-16 h-16 bg-green-50 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                <div className="w-8 h-8 bg-green-500 rounded-lg"></div>
-              </div>
-              <div className="text-sm font-medium text-text-primary">Financial Management</div>
-            </div>
+              </Card>
+            ))}
           </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center">
-          <Button className="btn-primary">
-            Get Started
-          </Button>
         </div>
       </div>
     </section>
