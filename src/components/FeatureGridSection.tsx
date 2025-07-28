@@ -1,110 +1,79 @@
-import { Wallet, TrendingUp, Shield, ArrowRight } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Video, MessageSquare, MapPin, ArrowRight } from "lucide-react";
+import whosNearMe from "@/assets/whos-near-me.png";
 
 const features = [
   {
-    icon: Wallet,
-    title: "Manage your finances",
-    description: "Our platform provides you with all the tools you need to manage your finances effectively.",
+    icon: Video,
+    title: "Live Video Chat",
+    description: "Connect face-to-face with verified members through secure video calls.",
   },
   {
-    icon: TrendingUp,
-    title: "Track your growth",
-    description: "Monitor your business growth with detailed analytics and insights.",
+    icon: MessageSquare,
+    title: "Private Messaging",
+    description: "Safe and discreet messaging with advanced privacy controls.",
   },
   {
-    icon: Shield,
-    title: "Secure transactions",
-    description: "All your financial data is protected with bank-level security measures.",
+    icon: MapPin,
+    title: "Events Nearby",
+    description: "Discover exclusive lifestyle events and parties in your area.",
   },
 ];
 
-const FeatureGridSection = () => {
+const FeaturesSection = () => {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-text-primary leading-tight">
-                All-in-one financial hub
-              </h2>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                Our platform provides you with all the tools you need to manage your finances, track your expenses, and grow your business.
-              </p>
-            </div>
+    <section className="w-full py-16 lg:py-24 px-6 lg:px-8 bg-gradient-primary">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
+            Powerful features designed for you
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Everything you need to connect, explore, and thrive in the lifestyle community
+          </p>
+        </div>
 
-            {/* Feature Grid */}
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <div key={index} className="group">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-text-primary">
-                        {feature.title}
-                      </h3>
-                      <p className="text-text-secondary leading-relaxed">
-                        {feature.description}
-                      </p>
-                      <a 
-                        href="#" 
-                        className="inline-flex items-center text-text-primary font-medium hover:underline"
-                      >
-                        Learn more
-                        <ArrowRight className="ml-1 w-4 h-4" />
-                      </a>
-                    </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column - Features List */}
+          <div className="space-y-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="p-6 bg-gradient-card shadow-card border border-white/50 rounded-2xl hover-lift">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="space-y-2 flex-1">
+                    <h3 className="text-xl font-semibold text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                    <a 
+                      href="#" 
+                      className="inline-flex items-center text-primary font-medium hover:underline"
+                    >
+                      Learn more
+                      <ArrowRight className="ml-1 w-4 h-4" />
+                    </a>
                   </div>
                 </div>
-              ))}
-            </div>
+              </Card>
+            ))}
           </div>
 
           {/* Right Column - Phone Mockup */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-72 h-[550px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden">
-                  <div className="h-full bg-gradient-to-br from-green-50 to-emerald-100 p-6 flex flex-col">
-                    {/* Phone UI Content */}
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="w-8 h-8 bg-primary rounded-lg"></div>
-                      <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
-                    </div>
-                    
-                    <div className="space-y-6">
-                      <div className="bg-white rounded-xl p-4 shadow-sm">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-600">Total Balance</span>
-                          <div className="w-4 h-4 bg-primary rounded-full"></div>
-                        </div>
-                        <div className="text-2xl font-bold text-gray-800">$24,580</div>
-                        <div className="text-sm text-green-600">+12% from last month</div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        {[1, 2, 3].map((i) => (
-                          <div key={i} className="bg-white rounded-lg p-3 shadow-sm">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 bg-gray-200 rounded-lg"></div>
-                              <div className="flex-1">
-                                <div className="h-3 bg-gray-200 rounded-full w-20 mb-1"></div>
-                                <div className="h-2 bg-gray-100 rounded-full w-16"></div>
-                              </div>
-                              <div className="text-sm font-medium text-gray-800">
-                                ${Math.floor(Math.random() * 1000)}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+              <Card className="w-80 h-[600px] bg-gradient-card shadow-premium rounded-3xl p-3 border-2 border-white/50">
+                <div className="w-full h-full rounded-2xl overflow-hidden bg-white">
+                  <img 
+                    src={whosNearMe} 
+                    alt="Who's near me feature"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
@@ -113,4 +82,4 @@ const FeatureGridSection = () => {
   );
 };
 
-export default FeatureGridSection;
+export default FeaturesSection;

@@ -4,44 +4,45 @@
 
 @layer base {
   :root {
-    /* Design System Colors - Based on specifications */
-    --background: 0 0% 100%; /* #FFFFFF */
+    /* SwingHub Brand Colors */
+    --background: 215 100% 98%; /* Light blue gradient background */
     --background-subtle: 220 14% 98%; /* #F9FAFB */
-    --foreground: 215 28% 17%; /* #111827 */
+    --foreground: 220 25% 15%; /* Dark text */
     
     /* Text Colors */
-    --text-primary: 215 28% 17%; /* #111827 */
+    --text-primary: 220 25% 15%; /* #111827 equivalent */
     --text-secondary: 215 19% 29%; /* #374151 */
     --text-tertiary: 215 13% 44%; /* #6B7280 */
     
-    /* Accent Colors */
-    --primary: 158 64% 52%; /* #10B981 */
+    /* SwingHub Brand Colors */
+    --primary: 220 100% 25%; /* Dark blue brand color */
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 160 84% 39%; /* #059669 */
+    --primary-hover: 220 100% 20%; /* Darker blue on hover */
+    --primary-glow: 220 100% 65%; /* Light blue glow */
     
     /* UI Colors */
-    --border: 220 13% 91%; /* #E5E7EB */
+    --border: 220 15% 90%; /* Light gray borders */
     --border-light: 210 20% 93%; /* #D1D5DB */
-    --muted: 220 14% 96%; /* #F3F4F6 */
-    --muted-foreground: 215 13% 44%; /* #6B7280 */
+    --muted: 220 15% 95%; /* Very light gray */
+    --muted-foreground: 220 10% 45%; /* Medium gray text */
     
     /* Card and components */
     --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 215 19% 29%;
-    --accent: 220 14% 96%;
-    --accent-foreground: 215 28% 17%;
+    --card-foreground: 220 25% 15%;
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 25% 15%;
+    --accent: 220 15% 96%;
+    --accent-foreground: 220 25% 15%;
     
     /* Form elements */
     --input: 0 0% 100%;
-    --ring: 158 64% 52%;
+    --ring: 220 100% 25%;
     
     /* Utility */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --popover-foreground: 220 25% 15%;
     
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -59,17 +60,18 @@
     --radius-lg: 12px;
     --radius-xl: 16px;
 
-    /* Gradients - Decorative backgrounds */
-    --gradient-hero: radial-gradient(ellipse at top left, #D1FAE5 0%, #E0E7FF 50%, #FEF3C7 100%);
-    --gradient-section: radial-gradient(ellipse at center, rgba(209, 250, 229, 0.3) 0%, rgba(224, 231, 255, 0.3) 50%, rgba(254, 243, 199, 0.3) 100%);
+    /* SwingHub Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 98%) 0%, hsl(220 80% 95%) 50%, hsl(230 65% 92%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 100% 97%) 0%, hsl(225 85% 94%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
     
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* Premium shadows */
+    --shadow-soft: 0 2px 20px -2px hsl(220 25% 25% / 0.08);
+    --shadow-card: 0 4px 30px -4px hsl(220 25% 25% / 0.12);
+    --shadow-premium: 0 8px 40px -8px hsl(220 100% 25% / 0.15);
     
     /* Transitions */
-    --transition-smooth: all 0.2s ease;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -118,34 +120,48 @@
 
   body {
     @apply bg-background text-foreground font-inter antialiased;
+    background: var(--gradient-primary);
   }
 }
 
 @layer components {
-  /* Button Styles */
-  .btn-primary {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors hover:bg-primary-hover;
+  /* Premium gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
   }
   
-  .btn-secondary {
-    @apply bg-background text-text-secondary px-6 py-3 border border-border rounded-lg font-medium transition-all hover:border-border-light hover:bg-background-subtle;
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
   }
   
-  /* Form Input */
-  .form-input {
-    @apply border border-border-light rounded-lg px-4 py-3 bg-input text-base focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all;
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Premium shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
   
-  /* Typography Utilities */
-  .text-primary-custom {
-    color: hsl(var(--text-primary));
+  .shadow-card {
+    box-shadow: var(--shadow-card);
   }
   
-  .text-secondary-custom {
-    color: hsl(var(--text-secondary));
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Premium animations */
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:shadow-premium;
   }
   
-  .text-tertiary-custom {
-    color: hsl(var(--text-tertiary));
+  .hover-glow {
+    @apply transition-smooth hover:shadow-[0_0_30px_hsl(var(--primary-glow)/0.3)];
   }
 }

@@ -1,26 +1,28 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import FeatureGridSection from "@/components/FeatureGridSection";
-import ExpenseTrackingSection from "@/components/ExpenseTrackingSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
+import AboutSection from "@/components/AboutSection";
+import FeaturesSection from "@/components/FeatureGridSection";
+import EducationHub from "@/components/EducationHub";
+import EventsSection from "@/components/EventsSection";
+import SafetySection from "@/components/SafetySection";
+import PartnersSection from "@/components/PartnersSection";
 import PricingSection from "@/components/PricingSection";
-import FAQSection from "@/components/FAQSection";
 import TestimonialSection from "@/components/TestimonialSection";
-import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-primary">
       <Header />
       <HeroSection />
-      <FeatureGridSection />
-      <ExpenseTrackingSection />
-      <HowItWorksSection />
+      <AboutSection />
+      <FeaturesSection />
+      <EducationHub />
+      <EventsSection />
+      <SafetySection />
+      <PartnersSection />
       <PricingSection />
-      <FAQSection />
       <TestimonialSection />
-      <FinalCTASection />
       <Footer />
     </div>
   );

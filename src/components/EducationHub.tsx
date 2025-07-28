@@ -1,27 +1,30 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mic, GraduationCap, Compass } from "lucide-react";
+import podcastImage from "@/assets/podcast.png";
+import universityImage from "@/assets/university.png";
+import discoverImage from "@/assets/discover.png";
 
 const educationItems = [
   {
     icon: Mic,
     title: "SwingHub Podcast",
     description: "Weekly episodes featuring lifestyle experts, relationship advice, and community stories",
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=400&h=300&fit=crop",
+    image: podcastImage,
     color: "bg-purple-500"
   },
   {
     icon: GraduationCap,
     title: "SwingHub University", 
     description: "Comprehensive courses on communication, consent, and navigating the lifestyle safely",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
+    image: universityImage,
     color: "bg-blue-500"
   },
   {
     icon: Compass,
     title: "SwingHub Discover",
     description: "Explore articles, guides, and resources to enhance your lifestyle journey",
-    image: "https://images.unsplash.com/photo-1553028826-f4804151e0e2?w=400&h=300&fit=crop",
+    image: discoverImage,
     color: "bg-emerald-500"
   }
 ];
