@@ -32,10 +32,10 @@ const UpcomingEventSection = () => {
             
             {/* Floating Elements */}
             <div className="absolute top-6 right-6 space-y-2">
-              <Badge className="bg-red-500 text-white px-3 py-1 animate-pulse">
+              <Badge className="bg-red-500/90 text-white px-3 py-1 animate-pulse border border-red-400 shadow-lg">
                 Limited Spots
               </Badge>
-              <Badge variant="outline" className="border-white/50 text-white bg-black/30 backdrop-blur-sm px-3 py-1">
+              <Badge className="border-white/70 text-white bg-black/50 backdrop-blur-sm px-3 py-1 shadow-lg">
                 VIP Experience
               </Badge>
             </div>
@@ -104,10 +104,10 @@ const UpcomingEventSection = () => {
 
                   {/* CTA Section */}
                   <div className="space-y-4">
-                    <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
+                    <Card className="bg-white/20 backdrop-blur-md border border-white/30 p-6 rounded-2xl shadow-xl">
                       <div className="text-center space-y-4">
-                        <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-glow px-4 py-2 rounded-full">
-                          <Star className="w-4 h-4" />
+                        <div className="inline-flex items-center gap-2 bg-primary/30 text-white px-4 py-2 rounded-full border border-primary/50 shadow-lg">
+                          <Star className="w-4 h-4 text-yellow-300" />
                           <span className="text-sm font-semibold">Premium Event</span>
                         </div>
                         
@@ -117,23 +117,23 @@ const UpcomingEventSection = () => {
                         </div>
                         
                         <div className="space-y-3">
-                          <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-card hover-glow">
+                          <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-xl border border-primary/20">
                             <Ticket className="w-5 h-5 mr-2" />
                             Reserve Your Spot
                           </Button>
                           
-                          <Button variant="outline" size="lg" className="w-full border-white/50 text-white hover:bg-white/10">
+                          <Button variant="outline" size="lg" className="w-full border-white/70 text-white hover:bg-white/20 bg-black/20 backdrop-blur-sm shadow-lg">
                             Learn More
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
                         </div>
                         
                         <div className="text-center">
-                          <p className="text-xs text-white/60">
-                            Only <span className="font-semibold text-primary-glow">23 spots remaining</span>
+                          <p className="text-xs text-white/80 font-medium">
+                            Only <span className="font-bold text-yellow-300">23 spots remaining</span>
                           </p>
-                          <div className="w-full bg-white/20 rounded-full h-2 mt-2">
-                            <div className="bg-primary-glow h-2 rounded-full" style={{width: '81%'}}></div>
+                          <div className="w-full bg-white/30 rounded-full h-2 mt-2 border border-white/20">
+                            <div className="bg-yellow-300 h-2 rounded-full shadow-sm" style={{width: '81%'}}></div>
                           </div>
                         </div>
                       </div>

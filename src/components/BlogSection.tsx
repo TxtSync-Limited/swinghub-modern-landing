@@ -61,11 +61,11 @@ const BlogSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Featured Article */}
           {featuredPost && (
-            <Card className="lg:col-span-2 group overflow-hidden bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl transition-all duration-500">
-              <div className="relative h-64 overflow-hidden">
+            <Card className="group overflow-hidden bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl transition-all duration-500">
+              <div className="relative h-48 overflow-hidden">
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title}
@@ -89,16 +89,16 @@ const BlogSection = () => {
 
               </div>
               
-              <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {featuredPost.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {featuredPost.description}
                 </p>
                 
                 {/* Meta Info */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-4 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <User className="w-4 h-4" />
                     {featuredPost.author}
