@@ -65,13 +65,13 @@ const BlogSection = () => {
           {/* Featured Article */}
           {featuredPost && (
             <Card className="group overflow-hidden bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl transition-all duration-500">
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title}
                   className="w-full h-full object-cover transition-smooth group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 
                 {/* Featured Badge */}
                 <div className="absolute top-4 left-4">
@@ -86,19 +86,18 @@ const BlogSection = () => {
                     {featuredPost.category}
                   </Badge>
                 </div>
-
               </div>
               
-              <div className="p-6 space-y-3">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+              <div className="p-6 space-y-4">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {featuredPost.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed">
                   {featuredPost.description}
                 </p>
                 
                 {/* Meta Info */}
-                <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <User className="w-4 h-4" />
                     {featuredPost.author}
@@ -125,7 +124,7 @@ const BlogSection = () => {
           <div className="space-y-6">
             {regularPosts.map((post) => (
               <Card key={post.id} className="group overflow-hidden bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl transition-all duration-500">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 overflow-hidden">
                   <img 
                     src={post.image} 
                     alt={post.title}
@@ -142,26 +141,26 @@ const BlogSection = () => {
                   </div>
                 </div>
                 
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <div className="p-4 space-y-3">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
                   
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {post.description}
                   </p>
                   
                   {/* Meta Info */}
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <div className="flex items-center gap-3">
                       <span className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
+                        <User className="w-3 h-3" />
                         {post.author}
                       </span>
                       <span>{post.date}</span>
                     </div>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-3 h-3" />
                       {post.readTime}
                     </span>
                   </div>
