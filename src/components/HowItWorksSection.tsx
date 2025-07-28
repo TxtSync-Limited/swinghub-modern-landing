@@ -63,10 +63,10 @@ const HowItWorksSection = () => {
             {timelineSteps.map((step, index) => (
               <div 
                 key={index} 
-                className="relative animate-fade-in hover-scale group h-full"
+                className="relative animate-fade-in group h-full"
                 style={{animationDelay: `${index * 0.2}s`}}
               >
-                <Card className="relative bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl overflow-hidden group-hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+                <Card className="relative bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl overflow-hidden group-hover:shadow-2xl transition-all duration-500 h-full flex flex-col group-hover:scale-105 transform-gpu">
                   {/* Image Header */}
                   <div className="relative h-48 overflow-hidden">
                     <img 
