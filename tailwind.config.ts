@@ -23,18 +23,21 @@ export default {
 			},
 			colors: {
 				border: 'hsl(var(--border))',
+				'border-light': 'hsl(var(--border-light))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
+				background: {
+					DEFAULT: 'hsl(var(--background))',
+					subtle: 'hsl(var(--background-subtle))'
+				},
 				foreground: 'hsl(var(--foreground))',
+				'text-primary': 'hsl(var(--text-primary))',
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'text-tertiary': 'hsl(var(--text-tertiary))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					glow: 'hsl(var(--primary-glow))'
-				},
-				'accent-blue': {
-					DEFAULT: 'hsl(var(--accent-blue))',
-					foreground: 'hsl(var(--accent-blue-foreground))'
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',

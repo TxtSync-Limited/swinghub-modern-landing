@@ -1,109 +1,179 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
+import { useState } from "react";
+
+const pricingPlans = {
+  monthly: {
+    basic: { price: "$10", period: "/mth" },
+    pro: { price: "$25", period: "/mth" },
+    enterprise: { price: "$50", period: "/mth" }
+  },
+  annual: {
+    basic: { price: "$8", period: "/mth" },
+    pro: { price: "$20", period: "/mth" },
+    enterprise: { price: "$40", period: "/mth" }
+  }
+};
+
+const plans = [
+  {
+    name: "Basic",
+    key: "basic",
+    description: "Perfect for small businesses getting started",
+    features: [
+      "Up to 100 transactions per month",
+      "Basic expense tracking",
+      "Email support",
+      "Mobile app access"
+    ],
+    isPopular: false
+  },
+  {
+    name: "Pro",
+    key: "pro", 
+    description: "Everything you need to manage your finances",
+    features: [
+      "Unlimited transactions",
+      "Advanced analytics & reports",
+      "Priority support",
+      "API access",
+      "Custom categories",
+      "Team collaboration"
+    ],
+    isPopular: true
+  },
+  {
+    name: "Enterprise",
+    key: "enterprise",
+    description: "Advanced features for larger organizations",
+    features: [
+      "Everything in Pro",
+      "Dedicated account manager",
+      "Custom integrations",
+      "Advanced security features",
+      "SLA guarantee",
+      "White-label options"
+    ],
+    isPopular: false
+  }
+];
 
 const PricingSection = () => {
-  const freeFeatures = [
-    "Browse profiles",
-    "Basic matching",
-    "Send likes",
-    "Join public events",
-    "Community access"
-  ];
-
-  const premiumFeatures = [
-    "Unlimited messaging",
-    "Advanced filters",
-    "Video calls",
-    "Priority support",
-    "Exclusive events",
-    "Read receipts",
-    "Boost visibility",
-    "Premium badges"
-  ];
+  const [isAnnual, setIsAnnual] = useState(false);
+  const currentPricing = isAnnual ? pricingPlans.annual : pricingPlans.monthly;
 
   return (
-    <section className="w-full py-16 lg:py-24 px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="pricing" className="py-24 px-6 bg-background-subtle">
+      <div className="max-w-screen-xl mx-auto">
+        {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-            Free to Explore. Support to Elevate.
+          <h2 className="text-4xl font-bold text-text-primary">
+            Pricing Plans
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Start your journey for free, then unlock premium features to enhance your experience
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            Choose the plan that's right for you.
           </p>
+
+          {/* Billing Toggle */}
+          <div className="flex items-center justify-center space-x-4 mt-8">
+            <span className={`text-sm font-medium ${!isAnnual ? 'text-text-primary' : 'text-text-tertiary'}`}>
+              Monthly
+            </span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                isAnnual ? 'bg-primary' : 'bg-gray-300'
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  isAnnual ? 'translate-x-6' : 'translate-x-1'
+                }`}
+              />
+            </button>
+            <div className="flex items-center space-x-2">
+              <span className={`text-sm font-medium ${isAnnual ? 'text-text-primary' : 'text-text-tertiary'}`}>
+                Annually
+              </span>
+              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                Save 20%
+              </Badge>
+            </div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Free Plan */}
-          <Card className="p-8 bg-gradient-card shadow-card border-2 border-border rounded-2xl">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">Free</h3>
-                <div className="text-3xl font-bold text-foreground">
-                  $0
-                  <span className="text-lg text-muted-foreground font-normal">/month</span>
+        {/* Pricing Cards */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <Card 
+              key={index} 
+              className={`relative p-8 rounded-2xl border-2 transition-all hover:shadow-lg ${
+                plan.isPopular 
+                  ? 'border-primary shadow-lg' 
+                  : 'border-border bg-white'
+              }`}
+            >
+              {plan.isPopular && (
+                <Badge 
+                  className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1"
+                >
+                  Most Popular
+                </Badge>
+              )}
+
+              <div className="space-y-6">
+                {/* Plan Header */}
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold text-text-primary">
+                    {plan.name}
+                  </h3>
+                  <p className="text-text-secondary text-sm">
+                    {plan.description}
+                  </p>
                 </div>
-                <p className="text-muted-foreground mt-2">Perfect for getting started</p>
-              </div>
 
-              <ul className="space-y-3">
-                {freeFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button variant="outline" className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground py-3 font-semibold transition-smooth">
-                Get Started Free
-              </Button>
-            </div>
-          </Card>
-
-          {/* Premium Plan */}
-          <Card className="p-8 bg-gradient-to-br from-primary to-primary-glow text-primary-foreground shadow-premium rounded-2xl relative overflow-hidden">
-            <Badge className="absolute top-4 right-4 bg-white text-primary px-3 py-1 rounded-full font-medium">
-              <Star className="w-4 h-4 mr-1" />
-              Most Popular
-            </Badge>
-
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">Premium</h3>
-                <div className="text-3xl font-bold">
-                  $9.99
-                  <span className="text-lg font-normal opacity-90">/month</span>
+                {/* Price */}
+                <div className="space-y-1">
+                  <div className="flex items-baseline space-x-1">
+                    <span className="text-4xl font-bold text-text-primary">
+                      {currentPricing[plan.key as keyof typeof currentPricing].price}
+                    </span>
+                    <span className="text-text-tertiary">
+                      {currentPricing[plan.key as keyof typeof currentPricing].period}
+                    </span>
+                  </div>
+                  {isAnnual && (
+                    <p className="text-sm text-text-tertiary">
+                      Billed annually
+                    </p>
+                  )}
                 </div>
-                <p className="opacity-90 mt-2">Everything you need to thrive</p>
+
+                {/* Features */}
+                <div className="space-y-3">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start space-x-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-text-secondary text-sm">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <Button 
+                  className={`w-full ${
+                    plan.isPopular ? 'btn-primary' : 'btn-secondary'
+                  }`}
+                >
+                  Get Started
+                </Button>
               </div>
-
-              <ul className="space-y-3">
-                {premiumFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-white flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button className="w-full bg-white text-primary hover:bg-gray-100 py-3 font-semibold shadow-card hover-glow">
-                Start Premium Trial
-              </Button>
-            </div>
-
-            {/* Background decoration */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
-            <div className="absolute -top-6 -left-6 w-16 h-16 bg-white/10 rounded-full blur-lg"></div>
-          </Card>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground">
-            30-day money-back guarantee • Cancel anytime • No hidden fees
-          </p>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

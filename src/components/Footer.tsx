@@ -1,84 +1,124 @@
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
+
+const footerLinks = {
+  product: ["Features", "Pricing", "Integrations", "API"],
+  company: ["About Us", "Careers", "News", "Contact"],
+  resources: ["Blog", "Help Center", "Tutorials", "Community"],
+  legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"]
+};
 
 const Footer = () => {
   return (
-    <footer className="w-full py-12 px-6 lg:px-8 bg-white border-t border-border">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Logo & Copyright */}
+    <footer className="bg-text-primary text-white py-16 px-6">
+      <div className="max-w-screen-xl mx-auto">
+        <div className="grid md:grid-cols-5 gap-8 mb-12">
+          {/* Company Info */}
           <div className="space-y-4">
-            <div className="font-bold text-2xl text-primary">SwingHub</div>
-            <p className="text-muted-foreground text-sm">
-              © 2024 SwingHub. All rights reserved.
-            </p>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Explore</h4>
-            <nav className="flex flex-col space-y-2">
-              <a href="#features" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Features
-              </a>
-              <a href="#events" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Events
-              </a>
-              <a href="#hub" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Education Hub
-              </a>
-              <a href="#reviews" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Reviews
-              </a>
-            </nav>
-          </div>
-
-          {/* Support Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Support</h4>
-            <nav className="flex flex-col space-y-2">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Help Center
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Safety Guidelines
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                Terms of Service
-              </a>
-            </nav>
-          </div>
-
-          {/* App Downloads */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Download</h4>
-            <div className="flex flex-col gap-3">
-              <Button size="sm" className="justify-start h-auto p-3 bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Download className="w-4 h-4 mr-2" />
-                <div className="text-left">
-                  <div className="text-xs opacity-90">Download on the</div>
-                  <div className="text-sm font-medium">App Store</div>
-                </div>
-              </Button>
-              <Button variant="outline" size="sm" className="justify-start h-auto p-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Download className="w-4 h-4 mr-2" />
-                <div className="text-left">
-                  <div className="text-xs opacity-90">Get it on</div>
-                  <div className="text-sm font-medium">Google Play</div>
-                </div>
-              </Button>
+            <div className="font-bold text-xl">
+              Untitled UI
             </div>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              The ultimate financial hub for modern businesses. Manage finances, track expenses, and grow with confidence.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Product Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Product</h4>
+            <ul className="space-y-2">
+              {footerLinks.product.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Company</h4>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Resources</h4>
+            <ul className="space-y-2">
+              {footerLinks.resources.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2">
+              {footerLinks.legal.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Border */}
-        <div className="mt-12 pt-8 border-t border-border text-center">
-          <p className="text-muted-foreground text-sm">
-            SwingHub is designed for adults 18+ and committed to creating a safe, respectful community.
-          </p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-400 text-sm">
+              © 2025 Untitled UI. All rights reserved.
+            </div>
+            
+            {/* App Store Buttons */}
+            <div className="flex space-x-4">
+              <a href="#" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                <div className="flex items-center space-x-2">
+                  <div className="w-5 h-5 bg-white rounded-sm"></div>
+                  <div className="text-xs">
+                    <div className="text-gray-300">Download on the</div>
+                    <div className="font-semibold">App Store</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                <div className="flex items-center space-x-2">
+                  <div className="w-5 h-5 bg-white rounded-sm"></div>
+                  <div className="text-xs">
+                    <div className="text-gray-300">Get it on</div>
+                    <div className="font-semibold">Google Play</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
