@@ -18,7 +18,7 @@ const educationItems = [
   },
   {
     icon: GraduationCap,
-    title: "SwingHub University (Coming Soon)", 
+    title: "SwingHub University", 
     description: "Bite-sized videos on app features, profile building, etiquette, and staying safe.",
     image: universityImage,
     color: "from-blue-500 to-cyan-500",
