@@ -5,6 +5,7 @@ import azureLogo from "@/assets/logo-azure.png";
 import lovehoneyLogo from "@/assets/logo-lovehoney.png";
 import offendersLogo from "@/assets/logo-offenders.png";
 import veriffLogo from "@/assets/logo-veriff.png";
+import allguardLogo from "@/assets/logo-allguard.png";
 
 const PartnersSection = () => {
   return (
@@ -49,6 +50,11 @@ const PartnersSection = () => {
             <img 
               src={veriffLogo} 
               alt="Veriff"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+            />
+            <img 
+              src={allguardLogo} 
+              alt="AllGuard"
               className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
           </div>
