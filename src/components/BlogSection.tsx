@@ -61,11 +61,11 @@ const BlogSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Featured Article */}
           {featuredPost && (
-            <Card className="lg:row-span-2 group overflow-hidden bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl transition-all duration-500">
-              <div className="relative h-80 overflow-hidden">
+            <Card className="lg:col-span-2 group overflow-hidden bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl transition-all duration-500">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title}
@@ -87,34 +87,32 @@ const BlogSection = () => {
                   </Badge>
                 </div>
 
-                {/* Content Overlay */}
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary-glow transition-colors">
-                    {featuredPost.title}
-                  </h3>
-                  <p className="text-white/90 mb-4 line-clamp-3">
-                    {featuredPost.description}
-                  </p>
-                  
-                  {/* Meta Info */}
-                  <div className="flex items-center gap-4 text-sm text-white/80">
-                    <div className="flex items-center gap-1">
-                      <User className="w-4 h-4" />
-                      {featuredPost.author}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {featuredPost.date}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {featuredPost.readTime}
-                    </div>
-                  </div>
-                </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-6 space-y-4">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  {featuredPost.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {featuredPost.description}
+                </p>
+                
+                {/* Meta Info */}
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <User className="w-4 h-4" />
+                    {featuredPost.author}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {featuredPost.date}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {featuredPost.readTime}
+                  </div>
+                </div>
+                
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group-hover:shadow-card">
                   Read Full Article
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -126,46 +124,52 @@ const BlogSection = () => {
           {/* Regular Articles */}
           <div className="space-y-6">
             {regularPosts.map((post) => (
-              <Card key={post.id} className="group overflow-hidden bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl transition-all duration-500 flex">
-                <div className="relative w-48 h-32 overflow-hidden flex-shrink-0">
+              <Card key={post.id} className="group overflow-hidden bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl transition-all duration-500">
+                <div className="relative h-48 overflow-hidden">
                   <img 
                     src={post.image} 
                     alt={post.title}
                     className="w-full h-full object-cover transition-smooth group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
-                </div>
-                
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="outline" className="border-primary/30 text-primary bg-primary/10 px-2 py-1 text-xs">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="outline" className="border-white/50 text-white bg-black/30 backdrop-blur-sm px-3 py-1 text-sm">
                       <Tag className="w-3 h-3 mr-1" />
                       {post.category}
                     </Badge>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                </div>
+                
+                <div className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
                   
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2 flex-1">
+                  <p className="text-muted-foreground leading-relaxed">
                     {post.description}
                   </p>
                   
                   {/* Meta Info */}
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-3">
                       <span className="flex items-center gap-1">
-                        <User className="w-3 h-3" />
+                        <User className="w-4 h-4" />
                         {post.author}
                       </span>
                       <span>{post.date}</span>
                     </div>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
+                      <Clock className="w-4 h-4" />
                       {post.readTime}
                     </span>
                   </div>
+                  
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                    Read Article
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
                 </div>
               </Card>
             ))}

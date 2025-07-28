@@ -22,7 +22,7 @@ const UpcomingEventSection = () => {
 
         <Card className="relative overflow-hidden bg-gradient-card shadow-2xl border border-white/50 rounded-3xl group">
           {/* Background Image with Overlay */}
-          <div className="relative h-96 lg:h-80 overflow-hidden">
+          <div className="relative h-[600px] lg:h-[500px] overflow-hidden">
             <img 
               src={upcomingEventVenue} 
               alt="Exclusive SwingHub Event Venue"
@@ -41,59 +41,59 @@ const UpcomingEventSection = () => {
             </div>
 
             {/* Event Content */}
-            <div className="absolute inset-0 flex items-center">
-              <div className="container mx-auto px-6 lg:px-8">
+            <div className="absolute inset-0 flex items-center p-6 lg:p-8">
+              <div className="w-full max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   {/* Event Details */}
                   <div className="text-white space-y-6">
-                    <div className="space-y-2">
-                      <h3 className="text-4xl lg:text-5xl font-bold leading-tight">
-                        Midnight Masquerade
-                      </h3>
-                      <p className="text-xl text-white/90">
-                        An evening of mystery, elegance, and sophisticated connections
-                      </p>
-                    </div>
+                  <div className="space-y-2">
+                    <h3 className="text-3xl lg:text-4xl font-bold leading-tight">
+                      Midnight Masquerade
+                    </h3>
+                    <p className="text-lg text-white/90">
+                      An evening of mystery, elegance, and sophisticated connections
+                    </p>
+                  </div>
 
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm rounded-lg p-3">
+                    <div className="grid grid-cols-2 gap-3">
+                    <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-lg p-2">
                         <Calendar className="w-5 h-5 text-primary-glow" />
-                        <div>
-                          <p className="text-sm text-white/80">Date</p>
-                          <p className="font-semibold">Saturday, Feb 14th</p>
-                        </div>
+                      <div>
+                        <p className="text-xs text-white/80">Date</p>
+                        <p className="text-sm font-semibold">Saturday, Feb 14th</p>
+                      </div>
                       </div>
                       
-                      <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm rounded-lg p-3">
+                    <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-lg p-2">
                         <Clock className="w-5 h-5 text-primary-glow" />
-                        <div>
-                          <p className="text-sm text-white/80">Time</p>
-                          <p className="font-semibold">8:00 PM - 2:00 AM</p>
-                        </div>
+                      <div>
+                        <p className="text-xs text-white/80">Time</p>
+                        <p className="text-sm font-semibold">8:00 PM - 2:00 AM</p>
+                      </div>
                       </div>
                       
-                      <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm rounded-lg p-3">
+                    <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-lg p-2">
                         <MapPin className="w-5 h-5 text-primary-glow" />
-                        <div>
-                          <p className="text-sm text-white/80">Venue</p>
-                          <p className="font-semibold">The Grand Manor, London</p>
-                        </div>
+                      <div>
+                        <p className="text-xs text-white/80">Venue</p>
+                        <p className="text-sm font-semibold">The Grand Manor, London</p>
+                      </div>
                       </div>
                       
-                      <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm rounded-lg p-3">
+                      <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-lg p-2">
                         <Users className="w-5 h-5 text-primary-glow" />
-                        <div>
-                          <p className="text-sm text-white/80">Capacity</p>
-                          <p className="font-semibold">120 Guests Max</p>
-                        </div>
+                      <div>
+                        <p className="text-xs text-white/80">Capacity</p>
+                        <p className="text-sm font-semibold">120 Guests Max</p>
+                      </div>
                       </div>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <p className="text-white/90">
                         Join us for our most exclusive event of the year. An elegant masquerade ball featuring:
                       </p>
-                      <ul className="space-y-1 text-sm text-white/80">
+                      <ul className="space-y-1 text-xs text-white/80">
                         <li>• Premium open bar & gourmet catering</li>
                         <li>• Live DJ & sophisticated entertainment</li>
                         <li>• Elegant dress code & masquerade theme</li>
@@ -103,8 +103,8 @@ const UpcomingEventSection = () => {
                   </div>
 
                   {/* CTA Section */}
-                  <div className="lg:text-center space-y-6">
-                    <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl">
+                  <div className="space-y-4">
+                    <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
                       <div className="text-center space-y-4">
                         <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-glow px-4 py-2 rounded-full">
                           <Star className="w-4 h-4" />
