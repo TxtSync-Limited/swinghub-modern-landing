@@ -54,19 +54,6 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             {/* Logo & Brand */}
-            <div className="flex items-center gap-3 mb-6">
-              <img src={swinghubLogo} alt="SwingHub" className="h-12 w-auto" />
-              <div className="flex items-center gap-2">
-                <Badge className="bg-primary text-primary-foreground px-3 py-1 animate-pulse">
-                  <Sparkles className="w-3 h-3 mr-1" />
-                  #1 in UK
-                </Badge>
-                <Badge variant="outline" className="border-green-500/50 text-green-600 bg-green-500/10 px-3 py-1">
-                  <CheckCircle className="w-3 h-3 mr-1" />
-                  Verified
-                </Badge>
-              </div>
-            </div>
 
             {/* Main Headline */}
             <div className="space-y-6">
