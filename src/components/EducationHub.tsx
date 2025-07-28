@@ -70,7 +70,10 @@ const EducationHub = () => {
                   alt={item.title}
                   className="w-full h-full object-cover transition-smooth group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+                
+                {/* Enhanced Readability Overlay */}
+                <div className="absolute inset-0 bg-black/20"></div>
                 
                 {/* Featured Badge */}
                 {item.featured && (
@@ -97,19 +100,20 @@ const EducationHub = () => {
                 {/* Floating Stats */}
                 <div className="absolute bottom-6 right-6 space-y-2">
                   {Object.entries(item.stats).map(([key, value], idx) => (
-                    <div key={idx} className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-1 text-white text-xs font-semibold shadow-lg">
-                      <span className="capitalize">{key}:</span> <span className="text-yellow-300">{value}</span>
+                    <div key={idx} className="bg-black/60 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-1 shadow-lg">
+                      <span className="text-white/90 text-xs font-medium capitalize">{key}:</span> 
+                      <span className="text-yellow-300 text-xs font-bold ml-1">{value}</span>
                     </div>
                   ))}
                 </div>
               </div>
               
               {/* Content Section */}
-              <div className="relative p-6 space-y-4 flex-1 flex flex-col bg-white/5 backdrop-blur-sm">
+              <div className="relative p-6 space-y-4 flex-1 flex flex-col bg-background/95 backdrop-blur-sm border-t border-white/10">
                 <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed flex-1">
+                <p className="text-muted-foreground leading-relaxed flex-1 text-sm">
                   {item.description}
                 </p>
                 
@@ -118,7 +122,7 @@ const EducationHub = () => {
                   {item.status === 'Coming Soon' ? (
                     <Button 
                       variant="outline" 
-                      className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm shadow-lg"
+                      className="w-full border-muted text-muted-foreground bg-background/80 hover:bg-accent/80 backdrop-blur-sm shadow-lg"
                       disabled
                     >
                       <Clock className="w-4 h-4 mr-2" />
@@ -145,7 +149,7 @@ const EducationHub = () => {
                   
                   {/* Additional Info */}
                   <div className="text-center">
-                    <p className="text-xs text-white/70">
+                    <p className="text-xs text-muted-foreground/80 font-medium">
                       {item.status === 'Listen Now' && 'New episodes every Tuesday'}
                       {item.status === 'Coming Soon' && 'Be the first to know when we launch'}
                       {item.status === 'Discover Now' && 'Updated weekly with fresh content'}
@@ -162,12 +166,12 @@ const EducationHub = () => {
 
         {/* Bottom Section with Enhanced CTA */}
         <div className="mt-16">
-          <Card className="relative bg-white/10 backdrop-blur-md border border-white/20 p-8 lg:p-12 rounded-3xl shadow-2xl overflow-hidden">
+          <Card className="relative bg-gradient-card backdrop-blur-md border border-white/20 p-8 lg:p-12 rounded-3xl shadow-2xl overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-3xl"></div>
             
             <div className="relative text-center space-y-6">
-              <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-6 py-3 rounded-full backdrop-blur-sm border border-primary/30 shadow-lg">
+              <div className="inline-flex items-center gap-2 bg-primary/90 text-primary-foreground px-6 py-3 rounded-full backdrop-blur-sm border border-primary/30 shadow-lg">
                 <Users className="w-5 h-5" />
                 <span className="font-semibold">Join 15,000+ Learners</span>
               </div>
@@ -187,7 +191,7 @@ const EducationHub = () => {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 
-                <Button variant="outline" size="lg" className="border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm shadow-lg">
+                <Button variant="outline" size="lg" className="border-primary/30 text-foreground bg-background/80 hover:bg-accent/80 backdrop-blur-sm shadow-lg">
                   <GraduationCap className="w-5 h-5 mr-2" />
                   View All Resources
                 </Button>
