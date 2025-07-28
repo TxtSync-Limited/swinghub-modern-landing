@@ -156,7 +156,7 @@ const HeroSection = () => {
               <Card className="absolute -left-20 top-16 w-64 h-[480px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-xl rounded-[2.5rem] p-3 border border-white/20 opacity-90 hover-lift rotate-6 hover:rotate-3 transition-all duration-500">
                 <div className="w-full h-full rounded-[2rem] overflow-hidden bg-black">
                   <img 
-                    src={gatewayLifestyle} 
+                    src="https://swinghub.com/cdn/shop/files/1_93ffb272-bde2-48f9-ab17-f96eaecdf4f8.png?v=1730669587&width=800"
                     alt="Your gateway to the lifestyle"
                     className="w-full h-full object-cover"
                   />
