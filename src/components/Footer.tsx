@@ -68,31 +68,6 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-gradient-to-br from-background via-background to-accent/10 border-t border-white/10">
-      {/* Newsletter Section */}
-      <div className="w-full py-12 px-6 lg:px-8 bg-gradient-primary">
-        <div className="max-w-4xl mx-auto text-center">
-          <Card className="p-8 bg-gradient-card shadow-premium border border-white/20 rounded-3xl">
-            <h3 className="text-2xl font-bold text-foreground mb-3">
-              Stay in the Loop
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Get the latest updates on new features, events, and lifestyle tips delivered straight to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input 
-                placeholder="Enter your email address"
-                className="bg-background/50 border-white/20 text-foreground placeholder:text-muted-foreground"
-              />
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
-                Subscribe
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground mt-3">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </Card>
-        </div>
-      </div>
 
       {/* Main Footer Content */}
       <div className="w-full py-16 px-6 lg:px-8">
