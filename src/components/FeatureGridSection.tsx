@@ -1,27 +1,34 @@
 import { Card } from "@/components/ui/card";
 import { Video, MessageSquare, MapPin, ArrowRight, Users } from "lucide-react";
-import whosNearMe from "@/assets/whos-near-me.png";
+import meetNowImage from "@/assets/meet-now.png";
+import teleportImage from "@/assets/teleport.png";
+import viewedMeImage from "@/assets/viewed-me.png";
+import whosNearMeImage from "@/assets/whos-near-me-new.png";
 
 const features = [
   {
     icon: MapPin,
-    title: "Connect with people near you (or far away!)",
-    description: "Discover like-minded individuals in your area or explore connections worldwide.",
-  },
-  {
-    icon: Video,
-    title: "Join events, clubs, and lifestyle pages",
-    description: "Access exclusive gatherings and become part of thriving communities.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Private, secure messaging with voice notes and GIFs",
-    description: "Express yourself with multimedia messaging in a completely secure environment.",
+    title: "Who's near me",
+    description: "Discover like-minded individuals in your area and see who's around you right now.",
+    image: whosNearMeImage,
   },
   {
     icon: Users,
-    title: "Discover who's looked at your profile and who's nearby",
-    description: "See who's interested in you and find people in your vicinity.",
+    title: "Viewed me",
+    description: "See who's been checking out your profile and showing interest in you.",
+    image: viewedMeImage,
+  },
+  {
+    icon: Video,
+    title: "Meet now functionality",
+    description: "Find people ready to meet up instantly for spontaneous connections.",
+    image: meetNowImage,
+  },
+  {
+    icon: MessageSquare,
+    title: "Teleport - discover people all over the globe",
+    description: "Explore connections worldwide and connect with people anywhere on the planet.",
+    image: teleportImage,
   },
 ];
 
@@ -38,49 +45,38 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Features List */}
-          <div className="space-y-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="p-6 bg-gradient-card shadow-card border border-white/50 rounded-2xl hover-lift">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="space-y-2 flex-1">
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                    <a 
-                      href="#" 
-                      className="inline-flex items-center text-primary font-medium hover:underline"
-                    >
-                      Learn more
-                      <ArrowRight className="ml-1 w-4 h-4" />
-                    </a>
-                  </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {features.map((feature, index) => (
+            <Card key={index} className="group overflow-hidden bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={feature.image} 
+                  alt={feature.title}
+                  className="w-full h-full object-cover transition-smooth group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-primary/90 rounded-lg flex items-center justify-center shadow-card">
+                  <feature.icon className="w-6 h-6 text-white" />
                 </div>
-              </Card>
-            ))}
-          </div>
-
-          {/* Right Column - Phone Mockup */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <Card className="w-80 h-[600px] bg-gradient-card shadow-premium rounded-3xl p-3 border-2 border-white/50">
-                <div className="w-full h-full rounded-2xl overflow-hidden bg-white">
-                  <img 
-                    src={whosNearMe} 
-                    alt="Who's near me feature"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </Card>
-            </div>
-          </div>
+              </div>
+              
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-bold text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center text-primary font-medium hover:underline"
+                >
+                  Learn more
+                  <ArrowRight className="ml-1 w-4 h-4" />
+                </a>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
