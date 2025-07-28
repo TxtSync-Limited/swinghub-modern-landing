@@ -13,7 +13,6 @@ const educationItems = [
     description: "Hosts Gage & Olivia share stories, laughs, and lifestyle insights with honesty and heart.",
     image: podcastImage,
     color: "from-purple-500 to-pink-500",
-    stats: { episodes: "50+", rating: "4.9", listeners: "25K+" },
     status: "Listen Now",
     featured: true
   },
@@ -23,7 +22,6 @@ const educationItems = [
     description: "Bite-sized videos on app features, profile building, etiquette, and staying safe.",
     image: universityImage,
     color: "from-blue-500 to-cyan-500",
-    stats: { courses: "12", duration: "2-5 min", students: "Coming Soon" },
     status: "Coming Soon",
     featured: false
   },
@@ -33,7 +31,6 @@ const educationItems = [
     description: "Handpicked articles, club news, and expert content to keep you informed and empowered.",
     image: discoverImage,
     color: "from-emerald-500 to-teal-500",
-    stats: { articles: "100+", updates: "Weekly", readers: "15K+" },
     status: "Discover Now",
     featured: false
   }
@@ -95,16 +92,6 @@ const EducationHub = () => {
                 {/* Gradient Icon */}
                 <div className={`absolute bottom-6 left-6 w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-xl backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform duration-300`}>
                   <item.icon className="w-8 h-8 text-white" />
-                </div>
-
-                {/* Floating Stats */}
-                <div className="absolute bottom-6 right-6 space-y-2">
-                  {Object.entries(item.stats).map(([key, value], idx) => (
-                    <div key={idx} className="bg-black/60 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-1 shadow-lg">
-                      <span className="text-white/90 text-xs font-medium capitalize">{key}:</span> 
-                      <span className="text-yellow-300 text-xs font-bold ml-1">{value}</span>
-                    </div>
-                  ))}
                 </div>
               </div>
               
