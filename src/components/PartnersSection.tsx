@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import awsLogo from "@/assets/logo-aws.png";
 import googleCloudLogo from "@/assets/logo-google-cloud.png";
-import azureLogo from "@/assets/logo-azure.png";
 import lovehoneyLogo from "@/assets/logo-lovehoney.png";
 import offendersLogo from "@/assets/logo-offenders.png";
 import veriffLogo from "@/assets/logo-veriff.png";
@@ -30,11 +29,6 @@ const PartnersSection = () => {
             <img 
               src={googleCloudLogo} 
               alt="Google Cloud"
-              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
-            />
-            <img 
-              src={azureLogo} 
-              alt="Microsoft Azure"
               className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
             <img 
