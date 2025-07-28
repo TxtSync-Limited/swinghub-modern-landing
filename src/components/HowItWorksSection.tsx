@@ -86,9 +86,6 @@ const HowItWorksSection = () => {
                     </p>
                   </div>
 
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary-glow/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
                 </Card>
 
                 {/* Connection Line for Desktop */}
