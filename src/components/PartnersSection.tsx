@@ -1,5 +1,10 @@
 import { Card } from "@/components/ui/card";
-import partnerLogos from "@/assets/partner-logos.png";
+import awsLogo from "@/assets/logo-aws.png";
+import googleCloudLogo from "@/assets/logo-google-cloud.png";
+import azureLogo from "@/assets/logo-azure.png";
+import lovehoneyLogo from "@/assets/logo-lovehoney.png";
+import offendersLogo from "@/assets/logo-offenders.png";
+import veriffLogo from "@/assets/logo-veriff.png";
 
 const PartnersSection = () => {
   return (
@@ -15,11 +20,36 @@ const PartnersSection = () => {
         </div>
 
         <Card className="p-8 lg:p-12 bg-gradient-card shadow-card border border-white/50 rounded-2xl">
-          <div className="flex justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 items-center justify-items-center">
             <img 
-              src={partnerLogos} 
-              alt="Partner company logos"
-              className="max-w-full h-auto opacity-60 hover:opacity-80 transition-smooth"
+              src={awsLogo} 
+              alt="AWS"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+            />
+            <img 
+              src={googleCloudLogo} 
+              alt="Google Cloud"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+            />
+            <img 
+              src={azureLogo} 
+              alt="Microsoft Azure"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+            />
+            <img 
+              src={lovehoneyLogo} 
+              alt="LoveHoney"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+            />
+            <img 
+              src={offendersLogo} 
+              alt="Offenders.org.uk"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+            />
+            <img 
+              src={veriffLogo} 
+              alt="Veriff"
+              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
           </div>
         </Card>
