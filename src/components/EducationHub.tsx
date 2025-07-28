@@ -67,10 +67,6 @@ const EducationHub = () => {
                   alt={item.title}
                   className="w-full h-full object-cover transition-smooth group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
-                
-                {/* Enhanced Readability Overlay */}
-                <div className="absolute inset-0 bg-black/20"></div>
                 
                 {/* Featured Badge */}
                 {item.featured && (
