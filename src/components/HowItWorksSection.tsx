@@ -63,10 +63,10 @@ const HowItWorksSection = () => {
             {timelineSteps.map((step, index) => (
               <div 
                 key={index} 
-                className="relative animate-fade-in hover-scale group"
+                className="relative animate-fade-in hover-scale group h-full"
                 style={{animationDelay: `${index * 0.2}s`}}
               >
-                <Card className="relative bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+                <Card className="relative bg-gradient-card shadow-premium hover-lift border border-white/50 rounded-3xl overflow-hidden group-hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
                   {/* Image Header */}
                   <div className="relative h-48 overflow-hidden">
                     <img 
@@ -90,12 +90,12 @@ const HowItWorksSection = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className="relative p-6 space-y-4">
+                  <div className="relative p-6 space-y-4 flex-1 flex flex-col">
                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {step.title}
                     </h3>
                     
-                    <p className="text-muted-foreground leading-relaxed text-sm">
+                    <p className="text-muted-foreground leading-relaxed text-sm flex-1">
                       {step.description}
                     </p>
                   </div>
