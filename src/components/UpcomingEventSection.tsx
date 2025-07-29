@@ -22,7 +22,7 @@ const UpcomingEventSection = () => {
 
         <Card className="relative overflow-hidden bg-gradient-card shadow-2xl border border-white/50 rounded-3xl group">
           {/* Background Video with Overlay */}
-          <div className="relative h-[70vh] md:h-[80vh] lg:h-[60vh] overflow-hidden">
+          <div className="relative h-[900px] md:h-[80vh] lg:h-[60vh] overflow-hidden">
             <video 
               src="https://swinghub.com/cdn/shop/videos/c/vp/3abed33bb6614cada2b47b645a69ed27/3abed33bb6614cada2b47b645a69ed27.HD-1080p-7.2Mbps-51780330.mp4?v=0"
               autoPlay
