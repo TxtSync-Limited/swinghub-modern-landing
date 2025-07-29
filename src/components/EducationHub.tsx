@@ -58,7 +58,7 @@ const EducationHub = () => {
             <Card 
               key={index} 
               className="group relative overflow-hidden bg-white/10 backdrop-blur-md shadow-2xl hover-lift border border-white/20 rounded-3xl transition-all duration-500 h-full flex flex-col animate-fade-in
-              h-[320px]"
+              h-[280px]"
               style={{animationDelay: `${index * 0.2}s`}}
             >
               {/* Background Image with Overlay */}

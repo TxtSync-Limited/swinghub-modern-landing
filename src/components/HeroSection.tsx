@@ -40,13 +40,7 @@ const HeroSection = () => {
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary-glow/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-accent/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
         
-        {/* Floating Elements */}
-        <div className="absolute top-32 right-1/4 animate-float">
-          <div className="w-16 h-16 bg-primary/20 rounded-2xl rotate-12 blur-sm"></div>
-        </div>
-        <div className="absolute bottom-40 left-1/4 animate-float" style={{animationDelay: '1s'}}>
-          <div className="w-12 h-12 bg-primary-glow/30 rounded-full blur-sm"></div>
-        </div>
+        
       </div>
 
       <div className="relative max-w-7xl mx-auto w-full">
@@ -135,17 +129,14 @@ const HeroSection = () => {
           <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{animationDelay: '0.3s'}}>
             <div className="relative">
               {/* Main Phone */}
-              <Card className="relative w-80 h-[620px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-2xl rounded-[3rem] p-4 border-2 border-white/20 hover-lift group">
-                <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-black relative">
+              <Card className="relative w-80 h-[620px] rounded-[2.5rem]   bg-transparent border-0 overflow-hidden">
+                <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-transparent relative">
                   <img 
                     src={gatewayLifestyle} 
                     alt="SwingHub app interface"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                    className="w-full h-full object-cover rounded-[2.5rem] overflow-hidden"
                   />
                   
-                  {/* Phone UI Elements */}
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full"></div>
-                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full"></div>
                 </div>
                 
                 {/* Glow Effect */}
@@ -153,15 +144,15 @@ const HeroSection = () => {
               </Card>
 
               {/* Secondary Phone - Floating */}
-              <Card className="absolute -left-20 top-16 w-64 h-[480px] rounded-xl p-3">
-                <div className="w-full h-full overflow-hidden bg-black rounded-xl relative p-2">
+              {/* <Card className="absolute -left-20 top-16 w-80 h-[580px] rounded-lg border-0 overflow-hidden">
+                <div className="w-full h-full overflow-hidden relative">
                   <img 
-                    src={heroPhone}
+                    src={gatewayLifestyle}
                     alt="Your gateway to the lifestyle"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover  rounded-lg"
                   />
                 </div>
-              </Card>
+              </Card> */}
 
               {/* Floating Trust Indicators */}
               <div className="absolute -top-8 -right-8 animate-float">
