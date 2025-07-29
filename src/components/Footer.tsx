@@ -78,7 +78,6 @@ const Footer = () => {
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center gap-3">
                 <img src={swinghubLogo} alt="SwingHub" className="h-10 w-auto" />
-                <span className="text-2xl font-bold text-foreground">SwingHub</span>
               </div>
               
               <p className="text-muted-foreground leading-relaxed max-w-md">

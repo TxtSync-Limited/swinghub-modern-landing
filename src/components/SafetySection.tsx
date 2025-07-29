@@ -56,7 +56,7 @@ const SafetySection = () => {
         <div className="mt-16 text-center">
           <Card className="p-8 bg-accent-blue/50 border border-accent-blue rounded-2xl">
             <h3 className="text-2xl font-bold text-foreground mb-4">
-              Trusted by 500,000+ Members Worldwide
+              Trusted by 52,000+ Members Worldwide
             </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Join a community that prioritizes respect, consent, and safety. Our dedicated support team is available 24/7 to ensure your experience is always positive and secure.

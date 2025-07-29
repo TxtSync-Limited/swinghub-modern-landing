@@ -14,8 +14,8 @@ import {
   Zap
 } from "lucide-react";
 import swinghubLogo from "@/assets/swinghub-logo.png";
-import heroPhone from "@/assets/hero-phone.png";
-import gatewayLifestyle from "@/assets/gateway-lifestyle.png";
+import heroPhone from "@/assets/phone.jpg";
+import gatewayLifestyle from "@/assets/gateway-lifestyle.jpg";
 
 const HeroSection = () => {
   const stats = [
@@ -33,7 +33,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex items-center py-16 lg:py-24 px-6 lg:px-8 bg-gradient-hero overflow-hidden">
+    <section className="relative w-full min-h-[85vh] flex items-center py-16 px-6 lg:px-8 bg-gradient-hero overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -97,7 +97,7 @@ const HeroSection = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Button>
-              
+{/*               
               <Button variant="outline" size="lg" className="group border-2 border-foreground/20 hover:border-primary hover:bg-primary/10 text-foreground font-semibold px-8 py-4 rounded-2xl h-auto">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -108,7 +108,7 @@ const HeroSection = () => {
                     <div className="text-xs opacity-70">See How It Works</div>
                   </div>
                 </div>
-              </Button>
+              </Button> */}
             </div>
 
             {/* Stats Row */}
@@ -138,7 +138,7 @@ const HeroSection = () => {
               <Card className="relative w-80 h-[620px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-2xl rounded-[3rem] p-4 border-2 border-white/20 hover-lift group">
                 <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-black relative">
                   <img 
-                    src={heroPhone} 
+                    src={gatewayLifestyle} 
                     alt="SwingHub app interface"
                     className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                   />
@@ -153,10 +153,10 @@ const HeroSection = () => {
               </Card>
 
               {/* Secondary Phone - Floating */}
-              <Card className="absolute -left-20 top-16 w-64 h-[480px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-xl rounded-[2.5rem] p-3 border border-white/20 opacity-90 hover-lift rotate-6 hover:rotate-3 transition-all duration-500">
-                <div className="w-full h-full rounded-[2rem] overflow-hidden bg-black">
+              <Card className="absolute -left-20 top-16 w-64 h-[480px] rounded-xl p-3">
+                <div className="w-full h-full overflow-hidden bg-black rounded-xl relative p-2">
                   <img 
-                    src="https://swinghub.com/cdn/shop/files/1_93ffb272-bde2-48f9-ab17-f96eaecdf4f8.png?v=1730669587&width=800"
+                    src={heroPhone}
                     alt="Your gateway to the lifestyle"
                     className="w-full h-full object-cover"
                   />
@@ -165,7 +165,7 @@ const HeroSection = () => {
 
               {/* Floating Trust Indicators */}
               <div className="absolute -top-8 -right-8 animate-float">
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-xl">
+                <Card className="bg-black/60 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-xl">
                   <div className="flex items-center gap-2">
                     <Shield className="w-5 h-5 text-green-500" />
                     <div className="text-white text-sm font-semibold">100% Safe</div>
@@ -174,7 +174,7 @@ const HeroSection = () => {
               </div>
 
               <div className="absolute -bottom-8 -left-8 animate-float" style={{animationDelay: '1s'}}>
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-xl">
+                <Card className="bg-black/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-xl">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-blue-500" />
                     <div className="text-white text-sm font-semibold">50K+ Members</div>
@@ -183,7 +183,7 @@ const HeroSection = () => {
               </div>
 
               <div className="absolute top-1/2 -right-12 animate-float" style={{animationDelay: '2s'}}>
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-xl">
+                <Card className="bg-black/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-xl">
                   <div className="flex items-center gap-2">
                     <Star className="w-5 h-5 text-yellow-500 fill-current" />
                     <div className="text-white text-sm font-semibold">4.8 Rating</div>

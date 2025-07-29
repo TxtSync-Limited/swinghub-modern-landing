@@ -58,30 +58,6 @@ const PricingSection = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             At SwingHub, we believe everyone should have access to the swinging lifestyle — without paywalls in the way. That's why our core features are totally free, so you can connect, explore, and experience the community with zero pressure.
           </p>
-
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4 mt-8">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                isAnnual ? 'bg-primary' : 'bg-muted'
-              }`}
-            >
-              <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  isAnnual ? 'translate-x-6' : 'translate-x-1'
-                }`}
-              />
-            </button>
-            <div className="flex items-center space-x-2">
-              <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-                Yearly
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* Pricing Cards */}

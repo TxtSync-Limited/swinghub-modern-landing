@@ -22,9 +22,9 @@ const UpcomingEventSection = () => {
 
         <Card className="relative overflow-hidden bg-gradient-card shadow-2xl border border-white/50 rounded-3xl group">
           {/* Background Image with Overlay */}
-          <div className="relative h-[600px] lg:h-[500px] overflow-hidden">
+          <div className="relative h-[600px] lg:h-[60vh] overflow-hidden">
             <img 
-              src={upcomingEventVenue} 
+              src={"https://swinghub.com/cdn/shop/files/Untitled_design.jpg?v=1753288345&width=1946"} 
               alt="Exclusive SwingHub Event Venue"
               className="w-full h-full object-cover transition-smooth group-hover:scale-105"
             />
@@ -43,15 +43,15 @@ const UpcomingEventSection = () => {
             {/* Event Content */}
             <div className="absolute inset-0 flex items-center p-6 lg:p-8">
               <div className="w-full max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div className="grid lg:grid-cols-[60%_35%] gap-16 items-center">
                   {/* Event Details */}
                   <div className="text-white space-y-6">
                   <div className="space-y-2">
                     <h3 className="text-3xl lg:text-4xl font-bold leading-tight">
-                      Midnight Masquerade
+                      Sugar Boulevard
                     </h3>
                     <p className="text-lg text-white/90">
-                      An evening of mystery, elegance, and sophisticated connections
+                      Penthouse Playrooms is about to be dipped in frosting and draped in satin as we transform the venue into the one and only…Sugar Boulevard.
                     </p>
                   </div>
 
@@ -60,7 +60,7 @@ const UpcomingEventSection = () => {
                         <Calendar className="w-5 h-5 text-primary-glow" />
                       <div>
                         <p className="text-xs text-white/80">Date</p>
-                        <p className="text-sm font-semibold">Saturday, Feb 14th</p>
+                        <p className="text-sm font-semibold">20th September '25</p>
                       </div>
                       </div>
                       
@@ -76,7 +76,7 @@ const UpcomingEventSection = () => {
                         <MapPin className="w-5 h-5 text-primary-glow" />
                       <div>
                         <p className="text-xs text-white/80">Venue</p>
-                        <p className="text-sm font-semibold">The Grand Manor, London</p>
+                        <p className="text-sm font-semibold">Penthouse Playrooms, Dunstable</p>
                       </div>
                       </div>
                       
@@ -84,21 +84,16 @@ const UpcomingEventSection = () => {
                         <Users className="w-5 h-5 text-primary-glow" />
                       <div>
                         <p className="text-xs text-white/80">Capacity</p>
-                        <p className="text-sm font-semibold">120 Guests Max</p>
+                        <p className="text-sm font-semibold">280 Guests Max</p>
                       </div>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <p className="text-white/90">
-                        Join us for our most exclusive event of the year. An elegant masquerade ball featuring:
-                      </p>
-                      <ul className="space-y-1 text-xs text-white/80">
-                        <li>• Premium open bar & gourmet catering</li>
-                        <li>• Live DJ & sophisticated entertainment</li>
-                        <li>• Elegant dress code & masquerade theme</li>
-                        <li>• Exclusive networking opportunities</li>
-                      </ul>
+            <p className="p1">This is&nbsp;<span className="s1"><b>The Sweet Life</b></span> — a SwingHub signature event where every detail is coated in charm and temptation. Expect a night where the vibe is soft, sweet, and just the right amount of naughty.</p>
+<p className="p1">🎶 The soundtrack? Pure&nbsp;<span className="s1"><b>nostalgia</b></span>. &nbsp;The kind of music that makes you feel something in your chest <i>and</i> your hips and bringing them old classic memories back!&nbsp;</p>
+<p className="p1">🍬&nbsp;<span className="s1"><b>Sweet treats are everywhere</b></span> — candy stations, dessert platters, frosting-topped surprises, and little indulgences tucked into every corner.</p>
+<p className="p1">🧁&nbsp;<span className="s1"><b>SwingHub signature games</b></span> will be scattered throughout the venue — designed to spark conversation, flirtation, and unexpected connections. Think playful, cheeky, and sugar-themed challenges that break the ice and turn up the heat.</p>
                     </div>
                   </div>
 
@@ -149,7 +144,8 @@ const UpcomingEventSection = () => {
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-2 bg-gradient-card shadow-card border border-white/50 rounded-full px-6 py-3">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-muted-foreground font-medium">Event organizers standing by to assist</span>
+            <span className="text-muted-foreground font-medium">SwingHub Supporters get more!</span>
+            
           </div>
         </div>
       </div>

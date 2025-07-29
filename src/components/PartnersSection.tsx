@@ -22,34 +22,34 @@ const PartnersSection = () => {
         <Card className="p-8 lg:p-12 bg-gradient-card shadow-card border border-white/50 rounded-2xl">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 items-center justify-items-center">
             <img 
-              src={awsLogo} 
+              src={"https://framerusercontent.com/images/QzQYreSMkdd2ND38AqwS90KUHQ.png?scale-down-to=512"} 
               alt="AWS"
-              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+              className="h-12 lg:h-12 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
             <img 
-              src={googleCloudLogo} 
+              src={"https://images.icon-icons.com/2642/PNG/512/google_cloud_logo_icon_159333.png"} 
               alt="Google Cloud"
               className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
             <img 
-              src={lovehoneyLogo} 
+              src={"https://framerusercontent.com/images/1DTkqWl4qRJKjBK6NqvoAf2J0k.png?scale-down-to=512"} 
               alt="LoveHoney"
-              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+              className="h-12 lg:h-12 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
             <img 
-              src={offendersLogo} 
+              src={"https://framerusercontent.com/images/7r5CDs88R3U3Vs8gZ7x2vc6TaLU.png?scale-down-to=1024"} 
               alt="Offenders.org.uk"
               className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
             <img 
-              src={veriffLogo} 
+              src={"https://framerusercontent.com/images/USlITeUzLKlwUxiLDbkJabDGG7U.png?scale-down-to=1024"} 
               alt="Veriff"
               className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
             <img 
               src={allguardLogo} 
               alt="AllGuard"
-              className="h-12 lg:h-16 w-auto opacity-60 hover:opacity-80 transition-smooth"
+              className="h-12 lg:h-12 w-auto opacity-60 hover:opacity-80 transition-smooth"
             />
           </div>
         </Card>
