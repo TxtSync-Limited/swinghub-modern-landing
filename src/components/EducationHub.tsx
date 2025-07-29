@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mic, GraduationCap, Compass, Play, ArrowRight, Clock, Users, Star } from "lucide-react";
-import podcastImage from "@/assets/podcast.png";
+import podcastImage from "@/assets/podcast.jpeg";
 import universityImage from "@/assets/university.png";
 import discoverImage from "@/assets/discover.png";
 
@@ -12,7 +12,7 @@ const educationItems = [
     title: "The SwingHub Podcast",
     description: "Hosts Gage & Olivia share stories, laughs, and lifestyle insights with honesty and heart.",
     image: podcastImage,
-    color: "from-purple-500 to-pink-500",
+    color: "from-slate-500 to-grey-500",
     status: "Listen Now",
     featured: true
   },
@@ -21,7 +21,7 @@ const educationItems = [
     title: "SwingHub University", 
     description: "Bite-sized videos on app features, profile building, etiquette, and staying safe.",
     image: universityImage,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-slate-500 to-grey-500",
     status: "Coming Soon",
     featured: false
   },
@@ -30,7 +30,7 @@ const educationItems = [
     title: "SwingHub Discover",
     description: "Handpicked articles, club news, and expert content to keep you informed and empowered.",
     image: discoverImage,
-    color: "from-emerald-500 to-teal-500",
+    color: "from-slate-500 to-grey-500",
     status: "Discover Now",
     featured: false
   }
@@ -57,11 +57,12 @@ const EducationHub = () => {
           {educationItems.map((item, index) => (
             <Card 
               key={index} 
-              className="group relative overflow-hidden bg-white/10 backdrop-blur-md shadow-2xl hover-lift border border-white/20 rounded-3xl transition-all duration-500 h-full flex flex-col animate-fade-in"
+              className="group relative overflow-hidden bg-white/10 backdrop-blur-md shadow-2xl hover-lift border border-white/20 rounded-3xl transition-all duration-500 h-full flex flex-col animate-fade-in
+              h-[320px]"
               style={{animationDelay: `${index * 0.2}s`}}
             >
               {/* Background Image with Overlay */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.title}
@@ -86,19 +87,15 @@ const EducationHub = () => {
                 </div>
 
                 {/* Gradient Icon */}
-                <div className={`absolute bottom-6 left-6 w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-xl backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform duration-300`}>
+                {/* <div className={`absolute bottom-6 left-6 w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-xl backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform duration-300`}>
                   <item.icon className="w-8 h-8 text-white" />
-                </div>
+                </div> */}
               </div>
               
               {/* Content Section */}
-              <div className="relative p-6 space-y-4 flex-1 flex flex-col bg-background/95 backdrop-blur-sm border-t border-white/10">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed flex-1 text-sm">
-                  {item.description}
-                </p>
+              <div className="p-6 space-y-4 flex-1 flex flex-col
+              absolute bottom-0 left-0 right-0">
+
                 
                 {/* Action Button */}
                 <div className="space-y-3">
@@ -128,21 +125,13 @@ const EducationHub = () => {
                       )}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
-                  )}
+                  )}                  
                   
-                  {/* Additional Info */}
-                  <div className="text-center">
-                    <p className="text-xs text-muted-foreground/80 font-medium">
-                      {item.status === 'Listen Now' && 'New episodes every Tuesday'}
-                      {item.status === 'Coming Soon' && 'Be the first to know when we launch'}
-                      {item.status === 'Discover Now' && 'Updated weekly with fresh content'}
-                    </p>
-                  </div>
                 </div>
               </div>
 
               {/* Decorative Glow Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-5 rounded-3xl pointer-events-none group-hover:opacity-10 transition-opacity duration-500`}></div>
+              {/* <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-5 rounded-3xl pointer-events-none group-hover:opacity-10 transition-opacity duration-500`}></div> */}
             </Card>
           ))}
         </div>

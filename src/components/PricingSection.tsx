@@ -18,7 +18,7 @@ const plans = [
       "Basic search tools"
     ],
     isPopular: false,
-    buttonText: "Select This Plan"
+    buttonText: "Join for free!"
   },
   {
     name: "Premium Plan",
@@ -40,7 +40,7 @@ const plans = [
       "Priority Support – We've got your back, fast"
     ],
     isPopular: true,
-    buttonText: "Select This Plan"
+    buttonText: "Start your 14-day free trial",
   }
 ];
 

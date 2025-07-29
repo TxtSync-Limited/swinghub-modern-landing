@@ -4,6 +4,7 @@ import meetNowImage from "@/assets/meet-now.png";
 import teleportImage from "@/assets/teleport.png";
 import viewedMeImage from "@/assets/viewed-me.png";
 import whosNearMeImage from "@/assets/whos-near-me-new.png";
+import { Button } from "./ui/button";
 
 const features = [
   {
@@ -20,13 +21,13 @@ const features = [
   },
   {
     icon: Video,
-    title: "Meet now functionality",
+    title: "Meet now",
     description: "Find people ready to meet up instantly for spontaneous connections.",
     image: meetNowImage,
   },
   {
     icon: MessageSquare,
-    title: "Teleport - discover people all over the globe",
+    title: "Teleport",
     description: "Explore connections worldwide and connect with people anywhere on the planet.",
     image: teleportImage,
   },
@@ -47,38 +48,54 @@ const FeaturesSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="group overflow-hidden bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl">
-              <div className="relative h-64 overflow-hidden">
+            <Card key={index} className="group relative overflow-hidden bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl h-80">
+              {/* Background Image */}
+              <div className="absolute inset-0">
                 <img 
                   src={feature.image} 
                   alt={feature.title}
                   className="w-full h-full object-cover transition-smooth group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 w-12 h-12 bg-primary/90 rounded-lg flex items-center justify-center shadow-card">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
               </div>
               
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-                <a 
-                  href="#" 
-                  className="inline-flex items-center text-primary font-medium hover:underline"
-                >
-                  Learn more
-                  <ArrowRight className="ml-1 w-4 h-4" />
-                </a>
+              {/* Glass Blur Content Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <div className="bg-black/30 backdrop-blur-md border border-white/30 rounded-2xl p-6 space-y-4 transform transition-all duration-300 group-hover:bg-black/40 group-hover:border-white/40">
+                  <div className="flex items-center gap-3">
+                    {/* <div className="w-10 h-10 bg-primary/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-primary/50">
+                      <feature.icon className="w-5 h-5 text-white" />
+                    </div> */}
+                    <h3 className="text-2xl font-bold text-white">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-white text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                  
+                  <a 
+                    href="#" 
+                    className="inline-flex items-center text-white font-medium hover:text-primary-glow transition-colors group/link"
+                  >
+                    Learn more
+                    <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                  </a>
+                </div>
               </div>
             </Card>
           ))}
         </div>
       </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            View All Features of SwingHub
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
+        </div>
     </section>
   );
 };

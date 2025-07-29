@@ -58,7 +58,7 @@ const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">Ultimate</span> App for 
+                The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 via-pink-500 to-orange-500 bg-[length:300%_100%] animate-gradient-wave">Ultimate</span> App for 
                 <span className="block mt-2">Modern Relationships</span>
               </h1>
               

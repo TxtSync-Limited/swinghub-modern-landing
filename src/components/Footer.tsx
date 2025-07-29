@@ -181,7 +181,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="mt-12 pt-8 border-t border-white/10">
+          {/* <div className="mt-12 pt-8 border-t border-white/10">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -213,7 +213,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

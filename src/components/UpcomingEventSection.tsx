@@ -21,11 +21,14 @@ const UpcomingEventSection = () => {
         </div>
 
         <Card className="relative overflow-hidden bg-gradient-card shadow-2xl border border-white/50 rounded-3xl group">
-          {/* Background Image with Overlay */}
-          <div className="relative h-[600px] lg:h-[60vh] overflow-hidden">
-            <img 
-              src={"https://swinghub.com/cdn/shop/files/Untitled_design.jpg?v=1753288345&width=1946"} 
-              alt="Exclusive SwingHub Event Venue"
+          {/* Background Video with Overlay */}
+          <div className="relative h-[70vh] md:h-[80vh] lg:h-[60vh] overflow-hidden">
+            <video 
+              src="https://swinghub.com/cdn/shop/videos/c/vp/3abed33bb6614cada2b47b645a69ed27/3abed33bb6614cada2b47b645a69ed27.HD-1080p-7.2Mbps-51780330.mp4?v=0"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover transition-smooth group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20"></div>
@@ -41,21 +44,21 @@ const UpcomingEventSection = () => {
             </div>
 
             {/* Event Content */}
-            <div className="absolute inset-0 flex items-center p-6 lg:p-8">
+            <div className="absolute inset-0 flex items-center p-4 md:p-6 lg:p-8">
               <div className="w-full max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-[60%_35%] gap-16 items-center">
+                <div className="flex flex-col lg:grid lg:grid-cols-[60%_35%] gap-6 lg:gap-16 lg:items-center">
                   {/* Event Details */}
-                  <div className="text-white space-y-6">
+                  <div className="text-white space-y-4 lg:space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-3xl lg:text-4xl font-bold leading-tight">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                       Sugar Boulevard
                     </h3>
-                    <p className="text-lg text-white/90">
+                    <p className="text-base md:text-lg text-white/90">
                       Penthouse Playrooms is about to be dipped in frosting and draped in satin as we transform the venue into the one and only…Sugar Boulevard.
                     </p>
                   </div>
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3">
                     <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-lg p-2">
                         <Calendar className="w-5 h-5 text-primary-glow" />
                       <div>
@@ -89,7 +92,7 @@ const UpcomingEventSection = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-2 hidden md:block">
             <p className="p1">This is&nbsp;<span className="s1"><b>The Sweet Life</b></span> — a SwingHub signature event where every detail is coated in charm and temptation. Expect a night where the vibe is soft, sweet, and just the right amount of naughty.</p>
 <p className="p1">🎶 The soundtrack? Pure&nbsp;<span className="s1"><b>nostalgia</b></span>. &nbsp;The kind of music that makes you feel something in your chest <i>and</i> your hips and bringing them old classic memories back!&nbsp;</p>
 <p className="p1">🍬&nbsp;<span className="s1"><b>Sweet treats are everywhere</b></span> — candy stations, dessert platters, frosting-topped surprises, and little indulgences tucked into every corner.</p>
@@ -98,8 +101,8 @@ const UpcomingEventSection = () => {
                   </div>
 
                   {/* CTA Section */}
-                  <div className="space-y-4">
-                    <Card className="bg-white/20 backdrop-blur-md border border-white/30 p-6 rounded-2xl shadow-xl">
+                  <div className="space-y-4 mt-4 lg:mt-0">
+                    <Card className="bg-white/20 backdrop-blur-md border border-white/30 p-4 lg:p-6 rounded-2xl shadow-xl">
                       <div className="text-center space-y-4">
                         <div className="inline-flex items-center gap-2 bg-primary/30 text-white px-4 py-2 rounded-full border border-primary/50 shadow-lg">
                           <Star className="w-4 h-4 text-yellow-300" />
@@ -107,19 +110,19 @@ const UpcomingEventSection = () => {
                         </div>
                         
                         <div className="space-y-2">
-                          <p className="text-2xl font-bold text-white">£85 per person</p>
-                          <p className="text-sm text-white/70">Includes welcome drinks & catering</p>
+                          <p className="text-xl lg:text-2xl font-bold text-white">£85 per person</p>
+                          <p className="text-xs lg:text-sm text-white/70">Includes welcome drinks & catering</p>
                         </div>
                         
                         <div className="space-y-3">
-                          <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-xl border border-primary/20">
-                            <Ticket className="w-5 h-5 mr-2" />
+                          <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-xl border border-primary/20 text-sm lg:text-base">
+                            <Ticket className="w-4 lg:w-5 h-4 lg:h-5 mr-2" />
                             Reserve Your Spot
                           </Button>
                           
-                          <Button variant="outline" size="lg" className="w-full border-white/70 text-white hover:bg-white/20 bg-black/20 backdrop-blur-sm shadow-lg">
+                          <Button variant="outline" size="lg" className="w-full border-white/70 text-white hover:bg-white/20 bg-black/20 backdrop-blur-sm shadow-lg text-sm lg:text-base">
                             Learn More
-                            <ArrowRight className="w-4 h-4 ml-2" />
+                            <ArrowRight className="w-3 lg:w-4 h-3 lg:h-4 ml-2" />
                           </Button>
                         </div>
                         
@@ -142,10 +145,18 @@ const UpcomingEventSection = () => {
 
         {/* Additional Info */}
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-gradient-card shadow-card border border-white/50 rounded-full px-6 py-3">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-muted-foreground font-medium">SwingHub Supporters get more!</span>
-            
+          <div className="bg-gradient-card shadow-card border border-white/50 rounded-2xl px-6 py-5 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-center gap-3">
+                {/* <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0"></div> */}
+                <Badge className="bg-primary/20 text-primary border-primary/40 px-3 py-1 font-semibold">
+                  SwingHub Supporters Only
+                </Badge>
+              </div>
+              <p className="text-muted-foreground font-medium text-sm lg:text-base leading-relaxed">
+                To thank you for your love and loyalty, all <span className="font-bold text-primary">SwingHub supporters</span> will receive an exclusive Sugar Boulevard pin badge on arrival, a soft enamel keepsake that proves you were there when it got delicious.
+              </p>
+            </div>
           </div>
         </div>
       </div>

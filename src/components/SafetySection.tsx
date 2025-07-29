@@ -54,7 +54,7 @@ const SafetySection = () => {
 
         {/* Additional Safety Info */}
         <div className="mt-16 text-center">
-          <Card className="p-8 bg-accent-blue/50 border border-accent-blue rounded-2xl">
+          <Card className="p-8 bg-black/10 border border-accent-blue rounded-2xl">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Trusted by 52,000+ Members Worldwide
             </h3>
