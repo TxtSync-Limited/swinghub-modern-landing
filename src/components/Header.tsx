@@ -22,20 +22,23 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#explore" className="text-foreground hover:text-primary transition-smooth font-medium">
-            Explore
+          <a href="/features" className="text-foreground hover:text-primary transition-smooth font-medium">
+            Features
           </a>
-          <a href="#events" className="text-foreground hover:text-primary transition-smooth font-medium">
+          <a href="/events" className="text-foreground hover:text-primary transition-smooth font-medium">
             Events
           </a>
-          <a href="#hub" className="text-foreground hover:text-primary transition-smooth font-medium">
-            Hub
+          <a href="/education" className="text-foreground hover:text-primary transition-smooth font-medium">
+            Education
           </a>
-          <a href="#reviews" className="text-foreground hover:text-primary transition-smooth font-medium">
-            Reviews
+          <a href="/premium" className="text-foreground hover:text-primary transition-smooth font-medium">
+            Premium
           </a>
-          <a href="#features" className="text-foreground hover:text-primary transition-smooth font-medium">
-            Features
+          <a href="/about" className="text-foreground hover:text-primary transition-smooth font-medium">
+            About
+          </a>
+          <a href="/partners" className="text-foreground hover:text-primary transition-smooth font-medium">
+            Partners
           </a>
         </nav>
 
@@ -57,20 +60,23 @@ const Header = () => {
       {isMenuOpen && (
         <nav className="md:hidden mt-4 pb-4 border-t border-border bg-white/95 backdrop-blur-sm">
           <div className="flex flex-col space-y-4 pt-4">
-            <a href="#explore" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
-              Explore
+            <a href="/features" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
+              Features
             </a>
-            <a href="#events" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
+            <a href="/events" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
               Events
             </a>
-            <a href="#hub" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
-              Hub
+            <a href="/education" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
+              Education
             </a>
-            <a href="#reviews" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
-              Reviews
+            <a href="/premium" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
+              Premium
             </a>
-            <a href="#features" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
-              Features
+            <a href="/about" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
+              About
+            </a>
+            <a href="/partners" className="text-foreground hover:text-primary transition-smooth font-medium px-2">
+              Partners
             </a>
             <Button className="mx-2 mt-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-2 rounded-lg shadow-card">
               Get the App

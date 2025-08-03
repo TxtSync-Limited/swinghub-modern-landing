@@ -9,6 +9,7 @@ import EducationHubPage from "./pages/EducationHubPage";
 import About from "./pages/About";
 import Partners from "./pages/Partners";
 import Events from "./pages/Events";
+import Premium from "./pages/Premium";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/premium" element={<Premium />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
