@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Separator } from "@/components/ui/separator";
+import { useState } from "react";
 import { 
   Handshake, 
   Shield, 
@@ -23,7 +26,13 @@ import {
   Cloud,
   Server,
   CreditCard,
-  Verified
+  Verified,
+  MapPin,
+  Phone,
+  ExternalLink,
+  Calendar,
+  Clock,
+  X
 } from "lucide-react";
 import logoAws from "@/assets/logo-aws.png";
 import logoGoogleCloud from "@/assets/logo-google-cloud.png";
@@ -142,7 +151,299 @@ const partnershipStats = [
   { icon: TrendingUp, number: "300%", label: "Partner Growth" }
 ];
 
+// Enhanced venue data with modal information
+const venueData = [
+  {
+    name: "The Garden Club",
+    location: "London, UK",
+    category: "Private Members Club",
+    image: "/api/placeholder/400/300",
+    description: "Exclusive private club offering luxury amenities and discrete lifestyle experiences.",
+    features: ["Private Rooms", "Bar & Restaurant", "Couples Events"],
+    rating: 4.8,
+    memberDiscount: "20% off membership",
+    fullDescription: "The Garden Club is London's premier private members club, offering an exclusive and sophisticated environment for lifestyle enthusiasts. Our beautifully appointed facilities include private rooms, a full-service bar and restaurant, and regular couples events in a discrete and welcoming atmosphere.",
+    amenities: ["Private Rooms", "Full Bar", "Restaurant", "Event Spaces", "Parking", "Security"],
+    gallery: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"],
+    contact: {
+      phone: "+44 20 7123 4567",
+      email: "info@thegardenclub.co.uk",
+      website: "https://thegardenclub.co.uk"
+    },
+    openingHours: {
+      weekdays: "7:00 PM - 2:00 AM",
+      weekends: "8:00 PM - 3:00 AM"
+    },
+    specialOffers: ["SwingHub Members: 20% off annual membership", "Complimentary welcome drink", "Priority booking for events"]
+  },
+  {
+    name: "Sanctuary Resort",
+    location: "Brighton, UK", 
+    category: "Lifestyle Resort",
+    image: "/api/placeholder/400/300",
+    description: "Beachfront resort catering to lifestyle couples with themed weekends and events.",
+    features: ["Spa Services", "Beach Access", "Event Hosting"],
+    rating: 4.9,
+    memberDiscount: "15% off bookings",
+    fullDescription: "Nestled on Brighton's beautiful coastline, Sanctuary Resort offers the perfect blend of luxury and lifestyle experiences. Our beachfront location provides stunning sea views while our comprehensive spa services and event hosting capabilities make us the ideal destination for lifestyle couples.",
+    amenities: ["Spa & Wellness", "Beach Access", "Event Spaces", "Restaurant", "Pool", "Fitness Center"],
+    gallery: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"],
+    contact: {
+      phone: "+44 12 3456 7890",
+      email: "bookings@sanctuaryresort.co.uk", 
+      website: "https://sanctuaryresort.co.uk"
+    },
+    openingHours: {
+      weekdays: "24/7 Resort Access",
+      weekends: "24/7 Resort Access"
+    },
+    specialOffers: ["SwingHub Members: 15% off all bookings", "Complimentary spa consultation", "Late checkout included"]
+  },
+  {
+    name: "Club Velvet",
+    location: "Manchester, UK",
+    category: "Social Club", 
+    image: "/api/placeholder/400/300",
+    description: "Modern social club with premium facilities and regular community events.",
+    features: ["Dance Floor", "VIP Areas", "Regular Events"],
+    rating: 4.7,
+    memberDiscount: "Free entry with membership",
+    fullDescription: "Club Velvet represents the pinnacle of Manchester's social scene, offering a modern and sophisticated environment for lifestyle enthusiasts. Our state-of-the-art facilities include an expansive dance floor, exclusive VIP areas, and regular community events that bring together like-minded individuals.",
+    amenities: ["Dance Floor", "VIP Lounges", "Full Bar", "Sound System", "Lighting", "Coat Check"],
+    gallery: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"],
+    contact: {
+      phone: "+44 16 1234 5678",
+      email: "events@clubvelvet.co.uk",
+      website: "https://clubvelvet.co.uk"
+    },
+    openingHours: {
+      weekdays: "Closed Monday-Wednesday", 
+      weekends: "9:00 PM - 3:00 AM"
+    },
+    specialOffers: ["SwingHub Members: Free entry", "Discounted drinks all night", "VIP area access"]
+  },
+  {
+    name: "Paradise Retreat",
+    location: "Birmingham, UK",
+    category: "Wellness Center",
+    image: "/api/placeholder/400/300", 
+    description: "Holistic wellness center offering couples therapy and relationship workshops.",
+    features: ["Wellness Programs", "Couples Therapy", "Workshops"],
+    rating: 4.8,
+    memberDiscount: "25% off sessions",
+    fullDescription: "Paradise Retreat is Birmingham's leading wellness center specializing in relationship enhancement and couples therapy. Our holistic approach combines traditional therapy techniques with modern wellness practices to help couples strengthen their bonds and explore new dimensions of their relationships.",
+    amenities: ["Therapy Rooms", "Workshop Spaces", "Relaxation Areas", "Refreshments", "Parking", "Reception"],
+    gallery: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"],
+    contact: {
+      phone: "+44 12 1234 5678",
+      email: "sessions@paradiseretreat.co.uk",
+      website: "https://paradiseretreat.co.uk"
+    },
+    openingHours: {
+      weekdays: "9:00 AM - 8:00 PM",
+      weekends: "10:00 AM - 6:00 PM"
+    },
+    specialOffers: ["SwingHub Members: 25% off all sessions", "Free initial consultation", "Couples packages available"]
+  },
+  {
+    name: "The Hideaway",
+    location: "Edinburgh, UK",
+    category: "Boutique Hotel",
+    image: "/api/placeholder/400/300",
+    description: "Intimate boutique hotel with lifestyle-friendly amenities and discrete service.",
+    features: ["Luxury Suites", "Room Service", "Concierge"],
+    rating: 4.9,
+    memberDiscount: "10% off stays",
+    fullDescription: "The Hideaway offers an intimate and luxurious boutique hotel experience in the heart of Edinburgh. Our discretely located property features beautifully appointed suites, personalized concierge service, and amenities designed specifically for lifestyle couples seeking privacy and comfort.",
+    amenities: ["Luxury Suites", "24/7 Room Service", "Concierge", "Private Dining", "Spa Services", "Valet Parking"],
+    gallery: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"],
+    contact: {
+      phone: "+44 13 1234 5678",
+      email: "reservations@thehideaway.co.uk",
+      website: "https://thehideaway.co.uk"
+    },
+    openingHours: {
+      weekdays: "24/7 Hotel Service",
+      weekends: "24/7 Hotel Service"
+    },
+    specialOffers: ["SwingHub Members: 10% off stays", "Complimentary room upgrade", "Late checkout included"]
+  },
+  {
+    name: "Elements Club",
+    location: "Leeds, UK",
+    category: "Entertainment Venue",
+    image: "/api/placeholder/400/300",
+    description: "Contemporary venue hosting lifestyle events with modern facilities and atmosphere.",
+    features: ["Event Space", "Full Bar", "Entertainment"],
+    rating: 4.6,
+    memberDiscount: "Members-only events", 
+    fullDescription: "Elements Club is Leeds' premier entertainment venue for the lifestyle community. Our contemporary design and modern facilities create the perfect atmosphere for hosting exclusive events, private parties, and community gatherings in a sophisticated and welcoming environment.",
+    amenities: ["Event Spaces", "Full Bar", "Entertainment Systems", "Catering", "Parking", "Security"],
+    gallery: ["/api/placeholder/600/400", "/api/placeholder/600/400", "/api/placeholder/600/400"],
+    contact: {
+      phone: "+44 11 3123 4567",
+      email: "events@elementsclub.co.uk",
+      website: "https://elementsclub.co.uk"
+    },
+    openingHours: {
+      weekdays: "Event-based opening",
+      weekends: "8:00 PM - 2:00 AM"
+    },
+    specialOffers: ["SwingHub Members: Exclusive event access", "Discounted private hire", "Complimentary canapes"]
+  }
+];
+
+const VenueModal = ({ venue, isOpen, onClose }) => {
+  if (!venue) return null;
+  
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold flex items-center gap-2">
+            <Building className="w-6 h-6 text-primary" />
+            {venue.name}
+          </DialogTitle>
+          <DialogDescription className="flex items-center gap-2 text-muted-foreground">
+            <MapPin className="w-4 h-4" />
+            {venue.location} • {venue.category}
+          </DialogDescription>
+        </DialogHeader>
+        
+        <div className="space-y-6">
+          {/* Main Image */}
+          <div className="relative h-64 rounded-lg overflow-hidden">
+            <img 
+              src={venue.image} 
+              alt={venue.name}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute top-4 right-4 flex items-center gap-2">
+              <div className="flex items-center gap-1 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1">
+                <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                <span className="text-sm font-semibold">{venue.rating}</span>
+              </div>
+              <Badge className="bg-primary text-primary-foreground">{venue.category}</Badge>
+            </div>
+          </div>
+          
+          {/* Description */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">About {venue.name}</h3>
+            <p className="text-muted-foreground leading-relaxed">{venue.fullDescription}</p>
+          </div>
+          
+          {/* Special Offer */}
+          <Card className="p-4 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
+            <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">SwingHub Member Benefits</h4>
+            <div className="space-y-1">
+              {venue.specialOffers.map((offer, index) => (
+                <div key={index} className="flex items-center gap-2 text-green-700 dark:text-green-300 text-sm">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                  <span>{offer}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Amenities */}
+            <div>
+              <h4 className="font-semibold mb-3">Amenities & Facilities</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {venue.amenities.map((amenity, index) => (
+                  <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                    {amenity}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Opening Hours */}
+            <div>
+              <h4 className="font-semibold mb-3">Opening Hours</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <div>
+                    <div className="font-medium">Weekdays</div>
+                    <div className="text-muted-foreground">{venue.openingHours.weekdays}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-primary" />
+                  <div>
+                    <div className="font-medium">Weekends</div>
+                    <div className="text-muted-foreground">{venue.openingHours.weekends}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contact Information */}
+          <Card className="p-4">
+            <h4 className="font-semibold mb-3">Contact Information</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="text-sm">{venue.contact.phone}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-sm">{venue.contact.email}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <ExternalLink className="w-4 h-4 text-primary" />
+                <a 
+                  href={venue.contact.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  {venue.contact.website}
+                </a>
+              </div>
+            </div>
+          </Card>
+          
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button className="flex-1">
+              <Phone className="w-4 h-4 mr-2" />
+              Call Now
+            </Button>
+            <Button variant="outline" className="flex-1">
+              <Mail className="w-4 h-4 mr-2" />
+              Send Email
+            </Button>
+            <Button variant="outline" className="flex-1" asChild>
+              <a href={venue.contact.website} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Visit Website
+              </a>
+            </Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
 const Partners = () => {
+  const [selectedVenue, setSelectedVenue] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const openVenueModal = (venue) => {
+    setSelectedVenue(venue);
+    setIsModalOpen(true);
+  };
+  
+  const closeVenueModal = () => {
+    setIsModalOpen(false);
+    setSelectedVenue(null);
+  };
   return (
     <div className="min-h-screen bg-gradient-primary">
       <Header />
@@ -417,76 +718,12 @@ const Partners = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "The Garden Club",
-                location: "London, UK",
-                category: "Private Members Club",
-                image: "/api/placeholder/400/300",
-                description: "Exclusive private club offering luxury amenities and discrete lifestyle experiences.",
-                features: ["Private Rooms", "Bar & Restaurant", "Couples Events"],
-                rating: 4.8,
-                memberDiscount: "20% off membership"
-              },
-              {
-                name: "Sanctuary Resort",
-                location: "Brighton, UK",
-                category: "Lifestyle Resort",
-                image: "/api/placeholder/400/300",
-                description: "Beachfront resort catering to lifestyle couples with themed weekends and events.",
-                features: ["Spa Services", "Beach Access", "Event Hosting"],
-                rating: 4.9,
-                memberDiscount: "15% off bookings"
-              },
-              {
-                name: "Club Velvet",
-                location: "Manchester, UK",
-                category: "Social Club",
-                image: "/api/placeholder/400/300",
-                description: "Modern social club with premium facilities and regular community events.",
-                features: ["Dance Floor", "VIP Areas", "Regular Events"],
-                rating: 4.7,
-                memberDiscount: "Free entry with membership"
-              },
-              {
-                name: "Paradise Retreat",
-                location: "Birmingham, UK",
-                category: "Wellness Center",
-                image: "/api/placeholder/400/300",
-                description: "Holistic wellness center offering couples therapy and relationship workshops.",
-                features: ["Wellness Programs", "Couples Therapy", "Workshops"],
-                rating: 4.8,
-                memberDiscount: "25% off sessions"
-              },
-              {
-                name: "The Hideaway",
-                location: "Edinburgh, UK",
-                category: "Boutique Hotel",
-                image: "/api/placeholder/400/300",
-                description: "Intimate boutique hotel with lifestyle-friendly amenities and discrete service.",
-                features: ["Luxury Suites", "Room Service", "Concierge"],
-                rating: 4.9,
-                memberDiscount: "10% off stays"
-              },
-              {
-                name: "Elements Club",
-                location: "Leeds, UK",
-                category: "Entertainment Venue",
-                image: "/api/placeholder/400/300",
-                description: "Contemporary venue hosting lifestyle events with modern facilities and atmosphere.",
-                features: ["Event Space", "Full Bar", "Entertainment"],
-                rating: 4.6,
-                memberDiscount: "Members-only events"
-              }
-            ].map((venue, index) => (
+            {venueData.map((venue, index) => (
               <Card 
                 key={index} 
                 className="group relative overflow-hidden bg-gradient-card backdrop-blur-md border border-white/20 rounded-2xl shadow-xl hover-lift transition-all duration-300 hover:border-primary/30 cursor-pointer animate-fade-in"
                 style={{animationDelay: `${index * 0.1}s`}}
-                onClick={() => {
-                  // This would open a detailed venue modal in a real implementation
-                  console.log(`Opening details for ${venue.name}`);
-                }}
+                onClick={() => openVenueModal(venue)}
               >
                 {/* Venue Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -609,6 +846,13 @@ const Partners = () => {
           </Card>
         </div>
       </section>
+
+      {/* Venue Modal */}
+      <VenueModal 
+        venue={selectedVenue}
+        isOpen={isModalOpen}
+        onClose={closeVenueModal}
+      />
 
       <Footer />
     </div>
