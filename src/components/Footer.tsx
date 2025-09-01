@@ -25,38 +25,38 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const productLinks = [
-    { name: "Features", href: "#features" },
-    { name: "Education Hub", href: "#education" },
-    { name: "Events", href: "#events" },
-    { name: "Safety", href: "#safety" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Premium Features", href: "#premium" }
+    { name: "Features", href: "/features" },
+    { name: "Education Hub", href: "/education" },
+    { name: "Events", href: "/events" },
+    { name: "Safety", href: "/safety" },
+    { name: "Pricing", href: "/" },
+    { name: "Premium Features", href: "/premium" }
   ];
 
   const companyLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Our Story", href: "#story" },
-    { name: "Careers", href: "#careers" },
-    { name: "Press Kit", href: "#press" },
-    { name: "Blog", href: "#blog" },
-    { name: "Partners", href: "#partners" }
+    { name: "About Us", href: "/about" },
+    { name: "Our Story", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Press Kit", href: "mailto:press@swinghub.com" },
+    { name: "Blog", href: "/" },
+    { name: "Partners", href: "/partners" }
   ];
 
   const supportLinks = [
-    { name: "Help Center", href: "#help", icon: HelpCircle },
-    { name: "Live Chat", href: "#chat", icon: MessageCircle },
-    { name: "Community", href: "#community", icon: Users },
-    { name: "Contact Us", href: "#contact", icon: Mail },
-    { name: "Report Issue", href: "#report", icon: Shield }
+    { name: "Help Center", href: "/", icon: HelpCircle },
+    { name: "Live Chat", href: "/", icon: MessageCircle },
+    { name: "Community", href: "/", icon: Users },
+    { name: "Contact Us", href: "/contact", icon: Mail },
+    { name: "Report Issue", href: "/safety", icon: Shield }
   ];
 
   const legalLinks = [
-    { name: "Terms of Service", href: "#terms" },
-    { name: "Privacy Policy", href: "#privacy" },
-    { name: "Cookie Policy", href: "#cookies" },
-    { name: "Content Policy", href: "#content" },
-    { name: "GDPR Compliance", href: "#gdpr" },
-    { name: "Age Verification", href: "#age" }
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Cookie Policy", href: "/" },
+    { name: "Content Policy", href: "/guidelines" },
+    { name: "GDPR Compliance", href: "/gdpr" },
+    { name: "Age Verification", href: "/age-verification" }
   ];
 
   const socialLinks = [

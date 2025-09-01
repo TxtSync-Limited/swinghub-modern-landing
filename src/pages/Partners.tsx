@@ -400,6 +400,179 @@ const Partners = () => {
         </div>
       </section>
 
+      {/* Featured Venues Section */}
+      <section className="w-full py-24 px-6 lg:px-8 bg-gradient-to-r from-primary/5 to-primary-glow/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-6 mb-16">
+            <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-4 py-2 rounded-full font-medium">
+              <Building className="w-4 h-4 mr-2" />
+              Featured Venues
+            </Badge>
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
+              Discover Partner Venues
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore exclusive venues and clubs that welcome our community with special offers and member benefits.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "The Garden Club",
+                location: "London, UK",
+                category: "Private Members Club",
+                image: "/api/placeholder/400/300",
+                description: "Exclusive private club offering luxury amenities and discrete lifestyle experiences.",
+                features: ["Private Rooms", "Bar & Restaurant", "Couples Events"],
+                rating: 4.8,
+                memberDiscount: "20% off membership"
+              },
+              {
+                name: "Sanctuary Resort",
+                location: "Brighton, UK",
+                category: "Lifestyle Resort",
+                image: "/api/placeholder/400/300",
+                description: "Beachfront resort catering to lifestyle couples with themed weekends and events.",
+                features: ["Spa Services", "Beach Access", "Event Hosting"],
+                rating: 4.9,
+                memberDiscount: "15% off bookings"
+              },
+              {
+                name: "Club Velvet",
+                location: "Manchester, UK",
+                category: "Social Club",
+                image: "/api/placeholder/400/300",
+                description: "Modern social club with premium facilities and regular community events.",
+                features: ["Dance Floor", "VIP Areas", "Regular Events"],
+                rating: 4.7,
+                memberDiscount: "Free entry with membership"
+              },
+              {
+                name: "Paradise Retreat",
+                location: "Birmingham, UK",
+                category: "Wellness Center",
+                image: "/api/placeholder/400/300",
+                description: "Holistic wellness center offering couples therapy and relationship workshops.",
+                features: ["Wellness Programs", "Couples Therapy", "Workshops"],
+                rating: 4.8,
+                memberDiscount: "25% off sessions"
+              },
+              {
+                name: "The Hideaway",
+                location: "Edinburgh, UK",
+                category: "Boutique Hotel",
+                image: "/api/placeholder/400/300",
+                description: "Intimate boutique hotel with lifestyle-friendly amenities and discrete service.",
+                features: ["Luxury Suites", "Room Service", "Concierge"],
+                rating: 4.9,
+                memberDiscount: "10% off stays"
+              },
+              {
+                name: "Elements Club",
+                location: "Leeds, UK",
+                category: "Entertainment Venue",
+                image: "/api/placeholder/400/300",
+                description: "Contemporary venue hosting lifestyle events with modern facilities and atmosphere.",
+                features: ["Event Space", "Full Bar", "Entertainment"],
+                rating: 4.6,
+                memberDiscount: "Members-only events"
+              }
+            ].map((venue, index) => (
+              <Card 
+                key={index} 
+                className="group relative overflow-hidden bg-gradient-card backdrop-blur-md border border-white/20 rounded-2xl shadow-xl hover-lift transition-all duration-300 hover:border-primary/30 cursor-pointer animate-fade-in"
+                style={{animationDelay: `${index * 0.1}s`}}
+                onClick={() => {
+                  // This would open a detailed venue modal in a real implementation
+                  console.log(`Opening details for ${venue.name}`);
+                }}
+              >
+                {/* Venue Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={venue.image} 
+                    alt={venue.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  
+                  {/* Category Badge */}
+                  <Badge className="absolute top-3 left-3 bg-primary/90 text-primary-foreground">
+                    {venue.category}
+                  </Badge>
+                  
+                  {/* Rating */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-background/80 backdrop-blur-sm rounded-full px-2 py-1">
+                    <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                    <span className="text-xs font-semibold text-foreground">{venue.rating}</span>
+                  </div>
+                  
+                  {/* Member Discount */}
+                  <div className="absolute bottom-3 left-3 bg-green-500/90 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    {venue.memberDiscount}
+                  </div>
+                </div>
+
+                {/* Venue Details */}
+                <div className="p-6 space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-1">
+                      {venue.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm flex items-center gap-1">
+                      <Building className="w-3 h-3" />
+                      {venue.location}
+                    </p>
+                  </div>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {venue.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div className="space-y-2">
+                    <p className="text-foreground font-semibold text-sm">Features:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {venue.features.map((feature, featureIndex) => (
+                        <Badge 
+                          key={featureIndex} 
+                          variant="outline" 
+                          className="text-xs border-primary/30 text-primary bg-primary/5"
+                        >
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Action Button */}
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
+                    <ArrowRight className="w-4 h-4 mr-2" />
+                    View Details
+                  </Button>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500 pointer-events-none"></div>
+              </Card>
+            ))}
+          </div>
+          
+          {/* View All Venues Button */}
+          <div className="text-center mt-12">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground font-semibold">
+              <Building className="w-5 h-5 mr-2" />
+              Explore All Partner Venues
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="w-full py-16 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

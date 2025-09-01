@@ -16,6 +16,8 @@ import CommunityGuidelines from "./pages/CommunityGuidelines";
 import ContactUs from "./pages/ContactUs";
 import Safety from "./pages/Safety";
 import Careers from "./pages/Careers";
+import AgeVerification from "./pages/AgeVerification";
+import GDPRCompliance from "./pages/GDPRCompliance";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/safety" element={<Safety />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/age-verification" element={<AgeVerification />} />
+          <Route path="/gdpr" element={<GDPRCompliance />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
