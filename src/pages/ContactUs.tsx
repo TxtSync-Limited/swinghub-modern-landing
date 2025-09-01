@@ -103,10 +103,10 @@ const ContactUs = () => {
         {/* Contact Form with Map */}
         <section className="px-6 lg:px-8 py-16">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-0 bg-background/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="grid lg:grid-cols-2 gap-0 bg-background/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden shadow-2xl min-h-[600px]">
               
               {/* Left side - Map */}
-              <div className="h-[600px] lg:h-[700px]">
+              <div className="h-full min-h-[600px]">
                 <ContactMap />
               </div>
               

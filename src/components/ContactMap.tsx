@@ -1,5 +1,5 @@
 import React from 'react';
-import worldMapBackground from '@/assets/world-map-background.jpg';
+import swinghubMapBackground from '@/assets/swinghub-map-background.png';
 
 const ContactMap = () => {
 
@@ -7,7 +7,7 @@ const ContactMap = () => {
     <div className="relative w-full h-full">
       <div 
         className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${worldMapBackground})` }}
+        style={{ backgroundImage: `url(${swinghubMapBackground})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-background/40" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/60" />
