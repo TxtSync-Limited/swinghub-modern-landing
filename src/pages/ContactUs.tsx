@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactMap from "@/components/ContactMap";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -99,89 +100,98 @@ const ContactUs = () => {
           </div>
         </section>
 
-        {/* Contact Form */}
+        {/* Contact Form with Map */}
         <section className="px-6 lg:px-8 py-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Get in Touch
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                Ready to share your thoughts? We're here to listen and help make SwingHub even better.
-              </p>
-            </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-0 bg-background/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+              
+              {/* Left side - Map */}
+              <div className="h-[600px] lg:h-[700px]">
+                <ContactMap />
+              </div>
+              
+              {/* Right side - Contact Form */}
+              <div className="p-8 lg:p-12 bg-background/80 backdrop-blur-sm">
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                    Get in Touch
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Ready to share your thoughts? We're here to listen and help make SwingHub even better.
+                  </p>
+                </div>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 shadow-xl">
-              <form className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-6">
+                <form className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-foreground uppercase tracking-wide">
+                        First Name
+                      </label>
+                      <Input 
+                        placeholder="Enter your first name" 
+                        className="h-12 bg-background border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-primary transition-all duration-300"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-foreground uppercase tracking-wide">
+                        Last Name
+                      </label>
+                      <Input 
+                        placeholder="Enter your last name" 
+                        className="h-12 bg-background border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-primary transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                  
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
-                      First Name
+                    <label className="text-sm font-semibold text-foreground uppercase tracking-wide">
+                      Email Address
                     </label>
                     <Input 
-                      placeholder="Enter your first name" 
-                      className="h-12 bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300"
+                      type="email" 
+                      placeholder="your.email@example.com" 
+                      className="h-12 bg-background border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-primary transition-all duration-300"
                     />
                   </div>
+                  
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
-                      Last Name
+                    <label className="text-sm font-semibold text-foreground uppercase tracking-wide">
+                      Topic
                     </label>
-                    <Input 
-                      placeholder="Enter your last name" 
-                      className="h-12 bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300"
+                    <select className="w-full h-12 px-4 bg-background border border-border rounded-xl text-foreground focus:border-primary transition-all duration-300 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggc3Ryb2tlPSIjNjM2MzYzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJtNiA4IDQgNCA0LTQiLz48L3N2Zz4=')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat">
+                      <option>General Inquiry</option>
+                      <option>Feature Suggestion</option>
+                      <option>Safety & Support</option>
+                      <option>Partnership Opportunity</option>
+                      <option>Media Inquiry</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-foreground uppercase tracking-wide">
+                      Message
+                    </label>
+                    <Textarea 
+                      placeholder="Share your thoughts, ideas, or questions with us..." 
+                      rows={5}
+                      className="bg-background border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-primary transition-all duration-300 resize-none"
                     />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
-                    Email Address
-                  </label>
-                  <Input 
-                    type="email" 
-                    placeholder="your.email@example.com" 
-                    className="h-12 bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
-                    Topic
-                  </label>
-                  <select className="w-full h-12 px-4 bg-white/5 border border-white/20 rounded-xl text-foreground focus:bg-white/10 focus:border-primary/50 transition-all duration-300 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggc3Ryb2tlPSIjNjM2MzYzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJtNiA4IDQgNCA0LTQiLz48L3N2Zz4=')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat">
-                    <option>General Inquiry</option>
-                    <option>Feature Suggestion</option>
-                    <option>Safety & Support</option>
-                    <option>Partnership Opportunity</option>
-                    <option>Media Inquiry</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
-                    Message
-                  </label>
-                  <Textarea 
-                    placeholder="Share your thoughts, ideas, or questions with us..." 
-                    rows={6}
-                    className="bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300 resize-none"
-                  />
-                </div>
-                
-                <div className="pt-4">
-                  <Button className="w-full h-14 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-                    <MessageCircle className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                    Send Message
-                  </Button>
-                </div>
-              </form>
+                  
+                  <div className="pt-4">
+                    <Button className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+                      <MessageCircle className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
+              </div>
             </div>
             
             {/* Response Time Notice */}
             <div className="text-center mt-8">
-              <p className="text-muted-foreground/80 text-sm">
+              <p className="text-muted-foreground text-sm">
                 We typically respond within 24 hours. For urgent safety matters, 
                 please use our in-app reporting system for faster assistance.
               </p>
