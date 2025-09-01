@@ -102,10 +102,18 @@ const ContactUs = () => {
         {/* Contact Form */}
         <section className="px-6 lg:px-8 py-16">
           <div className="max-w-2xl mx-auto">
-            <Card className="p-8 bg-gradient-card shadow-card border border-white/50 rounded-2xl">
-              <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Send Us a Message
-              </h2>
+            <Card className="p-8 bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl group">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-smooth">
+                  <MessageCircle className="w-8 h-8 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold text-foreground mb-3">
+                  Send Us a Message
+                </h2>
+                <p className="text-muted-foreground">
+                  We're excited to hear from you and will get back to you soon!
+                </p>
+              </div>
               
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -113,13 +121,13 @@ const ContactUs = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       First Name
                     </label>
-                    <Input placeholder="Your first name" />
+                    <Input placeholder="Your first name" className="transition-smooth focus:ring-2 focus:ring-primary/20" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Last Name
                     </label>
-                    <Input placeholder="Your last name" />
+                    <Input placeholder="Your last name" className="transition-smooth focus:ring-2 focus:ring-primary/20" />
                   </div>
                 </div>
                 
@@ -127,14 +135,14 @@ const ContactUs = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Email Address
                   </label>
-                  <Input type="email" placeholder="your.email@example.com" />
+                  <Input type="email" placeholder="your.email@example.com" className="transition-smooth focus:ring-2 focus:ring-primary/20" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     What's this about?
                   </label>
-                  <select className="w-full px-3 py-2 bg-background border border-input rounded-md text-foreground">
+                  <select className="w-full px-3 py-2 bg-background border border-input rounded-md text-foreground transition-smooth focus:ring-2 focus:ring-primary/20 focus:border-primary/50">
                     <option>General Inquiry</option>
                     <option>Feature Suggestion</option>
                     <option>Safety & Support</option>
@@ -151,10 +159,12 @@ const ContactUs = () => {
                   <Textarea 
                     placeholder="Tell us what's on your mind. We're all ears!" 
                     rows={6}
+                    className="transition-smooth focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
                 
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12">
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 transition-smooth hover:shadow-lg">
+                  <MessageCircle className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>
               </form>
