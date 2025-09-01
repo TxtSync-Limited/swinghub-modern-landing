@@ -101,84 +101,91 @@ const ContactUs = () => {
 
         {/* Contact Form */}
         <section className="px-6 lg:px-8 py-16">
-          <div className="max-w-2xl mx-auto">
-            <Card className="p-8 bg-gradient-card shadow-card hover-lift border border-white/50 rounded-2xl group">
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-smooth">
-                  <MessageCircle className="w-8 h-8 text-primary" />
-                </div>
-                <h2 className="text-2xl font-bold text-foreground mb-3">
-                  Send Us a Message
-                </h2>
-                <p className="text-muted-foreground">
-                  We're excited to hear from you and will get back to you soon!
-                </p>
-              </div>
-              
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Get in Touch
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                Ready to share your thoughts? We're here to listen and help make SwingHub even better.
+              </p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 shadow-xl">
+              <form className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
                       First Name
                     </label>
-                    <Input placeholder="Your first name" className="transition-smooth focus:ring-2 focus:ring-primary/20" />
+                    <Input 
+                      placeholder="Enter your first name" 
+                      className="h-12 bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300"
+                    />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
                       Last Name
                     </label>
-                    <Input placeholder="Your last name" className="transition-smooth focus:ring-2 focus:ring-primary/20" />
+                    <Input 
+                      placeholder="Enter your last name" 
+                      className="h-12 bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300"
+                    />
                   </div>
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
                     Email Address
                   </label>
-                  <Input type="email" placeholder="your.email@example.com" className="transition-smooth focus:ring-2 focus:ring-primary/20" />
+                  <Input 
+                    type="email" 
+                    placeholder="your.email@example.com" 
+                    className="h-12 bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300"
+                  />
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    What's this about?
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
+                    Topic
                   </label>
-                  <select className="w-full px-3 py-2 bg-background border border-input rounded-md text-foreground transition-smooth focus:ring-2 focus:ring-primary/20 focus:border-primary/50">
+                  <select className="w-full h-12 px-4 bg-white/5 border border-white/20 rounded-xl text-foreground focus:bg-white/10 focus:border-primary/50 transition-all duration-300 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggc3Ryb2tlPSIjNjM2MzYzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJtNiA4IDQgNCA0LTQiLz48L3N2Zz4=')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat">
                     <option>General Inquiry</option>
                     <option>Feature Suggestion</option>
                     <option>Safety & Support</option>
-                    <option>Partnership</option>
+                    <option>Partnership Opportunity</option>
                     <option>Media Inquiry</option>
                     <option>Other</option>
                   </select>
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Your Message
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground/90 uppercase tracking-wide">
+                    Message
                   </label>
                   <Textarea 
-                    placeholder="Tell us what's on your mind. We're all ears!" 
+                    placeholder="Share your thoughts, ideas, or questions with us..." 
                     rows={6}
-                    className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                    className="bg-white/5 border-white/20 rounded-xl text-foreground placeholder:text-muted-foreground/60 focus:bg-white/10 focus:border-primary/50 transition-all duration-300 resize-none"
                   />
                 </div>
                 
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 transition-smooth hover:shadow-lg">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Send Message
-                </Button>
+                <div className="pt-4">
+                  <Button className="w-full h-14 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <MessageCircle className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                    Send Message
+                  </Button>
+                </div>
               </form>
-            </Card>
-          </div>
-        </section>
-
-        {/* Response Time */}
-        <section className="px-6 lg:px-8 py-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-muted-foreground">
-              We typically respond within 24 hours. For urgent safety matters, 
-              please use our in-app reporting system for faster assistance.
-            </p>
+            </div>
+            
+            {/* Response Time Notice */}
+            <div className="text-center mt-8">
+              <p className="text-muted-foreground/80 text-sm">
+                We typically respond within 24 hours. For urgent safety matters, 
+                please use our in-app reporting system for faster assistance.
+              </p>
+            </div>
           </div>
         </section>
       </main>
