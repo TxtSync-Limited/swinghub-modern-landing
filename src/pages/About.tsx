@@ -134,7 +134,7 @@ const About = () => {
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>
             Redefining 
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"> Lifestyle Connections</span>
+            <span className="bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"> Lifestyle Connections</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto animate-fade-in leading-relaxed" style={{animationDelay: '0.2s'}}>
             We're on a mission to create the safest, most authentic platform for the lifestyle community. 
@@ -198,7 +198,7 @@ const About = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
                       {stat.number}
                     </div>
                     <p className="text-muted-foreground font-medium">

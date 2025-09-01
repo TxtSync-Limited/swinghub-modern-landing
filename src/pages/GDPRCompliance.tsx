@@ -39,7 +39,7 @@ const GDPRCompliance = () => {
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
               Your Data Rights &
-              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"> Privacy Protection</span>
+              <span className="bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"> Privacy Protection</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Understand how SwingHub protects your personal data, respects your privacy rights, 

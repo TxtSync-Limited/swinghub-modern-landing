@@ -100,7 +100,7 @@ const EducationHubPage = () => {
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground">
             Learn. Grow. 
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"> Connect.</span>
+            <span className="bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"> Connect.</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Your comprehensive resource center for lifestyle education, podcasts, news, and the revolutionary SwingHub University.

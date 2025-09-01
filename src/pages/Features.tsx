@@ -162,7 +162,7 @@ const Features = () => {
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>
             Everything You Need for 
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"> Safe Connections</span>
+            <span className="bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"> Safe Connections</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             Discover the most comprehensive feature set designed specifically for the lifestyle community, with safety and authenticity at the core.
@@ -285,28 +285,28 @@ const Features = () => {
             
             <div className="relative grid md:grid-cols-4 gap-8 text-center">
               <div className="space-y-2">
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
                   50+
                 </div>
                 <p className="text-muted-foreground font-medium">Core Features</p>
               </div>
               
               <div className="space-y-2">
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
                   24/7
                 </div>
                 <p className="text-muted-foreground font-medium">Safety Monitoring</p>
               </div>
               
               <div className="space-y-2">
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
                   99.9%
                 </div>
                 <p className="text-muted-foreground font-medium">Uptime Guarantee</p>
               </div>
               
               <div className="space-y-2">
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
                   256
                 </div>
                 <p className="text-muted-foreground font-medium">Bit Encryption</p>

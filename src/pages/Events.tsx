@@ -174,7 +174,7 @@ const Events = () => {
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>
             Exclusive 
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"> Community Events</span>
+            <span className="bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"> Community Events</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto animate-fade-in leading-relaxed" style={{animationDelay: '0.2s'}}>
             Join SwingHub's curated events designed to bring our community together for unforgettable experiences, 
