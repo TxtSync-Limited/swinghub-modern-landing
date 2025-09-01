@@ -6,7 +6,7 @@ const ContactMap = () => {
   return (
     <div className="relative w-full h-full">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${worldMapBackground})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-background/40" />
